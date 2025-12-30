@@ -6,77 +6,6 @@ from worlds.ty_the_tasmanian_tiger_4.locations import create_locations
 from typing import List, Dict
 
 
-class Ty4LevelCode(Enum):
-    Z1 = 0
-    A1 = 4
-    A2 = 5
-    A3 = 6
-    A4 = 7
-    B1 = 8
-    B2 = 9
-    B3 = 10
-    D4 = 19
-    C1 = 12
-    C2 = 13
-    C3 = 14
-    C4 = 15
-    D1 = 16
-    D2 = 17
-    E1 = 20
-    E2 = 21
-    E3 = 22
-    E4 = 23
-
-
-ty4_core_levels = [Ty4LevelCode.A1, Ty4LevelCode.A2, Ty4LevelCode.A3,
-                   Ty4LevelCode.B1, Ty4LevelCode.B2, Ty4LevelCode.B3,
-                   Ty4LevelCode.C1, Ty4LevelCode.C2, Ty4LevelCode.C3]
-
-
-ty4_levels: Dict[Ty4LevelCode, str] = {
-    Ty4LevelCode.Z1: "Rainbow Cliffs",
-    Ty4LevelCode.A1: "Two Up",
-    Ty4LevelCode.A2: "Walk in the Park",
-    Ty4LevelCode.A3: "Ship Rex",
-    Ty4LevelCode.A4: "Bull's Pen",
-    Ty4LevelCode.B1: "Bridge on the River Ty",
-    Ty4LevelCode.B2: "Snow Worries",
-    Ty4LevelCode.B3: "Outback Safari",
-    Ty4LevelCode.D4: "Crikey's Cove",
-    Ty4LevelCode.C1: "Lyre, Lyre Pants on Fire",
-    Ty4LevelCode.C2: "Beyond the Black Stump",
-    Ty4LevelCode.C3: "Rex Marks the Spot",
-    Ty4LevelCode.C4: "Fluffy's Fjord",
-    Ty4LevelCode.D1: "Credits",
-    Ty4LevelCode.D2: "Cass' Crest",
-    Ty4LevelCode.E1: "Cass' Pass",
-    Ty4LevelCode.E2: "Final Battle",
-    Ty4LevelCode.E3: "Bonus World 1",
-    Ty4LevelCode.E4: "Bonus World 2"
-}
-
-
-ty4_levels_short: Dict[Ty4LevelCode, str] = {
-    Ty4LevelCode.Z1: "Rainbow Cliffs",
-    Ty4LevelCode.A1: "Two Up",
-    Ty4LevelCode.A2: "WitP",
-    Ty4LevelCode.A3: "Ship Rex",
-    Ty4LevelCode.A4: "Bull's Pen",
-    Ty4LevelCode.B1: "BotRT",
-    Ty4LevelCode.B2: "Snow Worries",
-    Ty4LevelCode.B3: "Outback Safari",
-    Ty4LevelCode.D4: "Crikey's Cove",
-    Ty4LevelCode.C1: "LLPoF",
-    Ty4LevelCode.C2: "BtBS",
-    Ty4LevelCode.C3: "RMtS",
-    Ty4LevelCode.C4: "Fluffy's Fjord",
-    Ty4LevelCode.D1: "Credits",
-    Ty4LevelCode.D2: "Cass' Crest",
-    Ty4LevelCode.E1: "Cass' Pass",
-    Ty4LevelCode.E2: "Final Battle",
-    Ty4LevelCode.E3: "Bonus World 1",
-    Ty4LevelCode.E4: "Bonus World 2"
-}
 
 
 class Ty4Region(Region):
@@ -97,53 +26,39 @@ def create_region(world: MultiWorld, player: int, options: Ty4Options, name: str
 
 def create_regions(world: MultiWorld, options: Ty4Options, player: int):
     create_region(world, player, options, "Menu")
-    create_region(world, player, options, "Rainbow Cliffs")
-    create_region(world, player, options, "Rainbow Cliffs - PF")
-    create_region(world, player, options, "Bli Bli Station")
-    create_region(world, player, options, "Bli Bli Station Gate")
-    create_region(world, player, options, "Bli Bli Station Gate - PF")
-    create_region(world, player, options, "Pippy Beach")
-    create_region(world, player, options, "Pippy Beach - PF")
-    create_region(world, player, options, "Lake Burril")
-    create_region(world, player, options, "Final Gauntlet")
-    create_region(world, player, options, "Final Gauntlet - PF")
-    create_region(world, player, options, "Two Up")
-    create_region(world, player, options, "Two Up - PF")
-    create_region(world, player, options, "Two Up - Upper Area")
-    create_region(world, player, options, "Two Up - Upper Area - PF")
-    create_region(world, player, options, "Two Up - End Area")
-    create_region(world, player, options, "Walk in the Park")
-    create_region(world, player, options, "Walk in the Park - PF")
-    create_region(world, player, options, "Ship Rex")
-    create_region(world, player, options, "Ship Rex - PF")
-    create_region(world, player, options, "Ship Rex - Beyond Gate")
-    create_region(world, player, options, "Ship Rex - Beyond Gate - PF")
-    create_region(world, player, options, "Bull's Pen")
-    create_region(world, player, options, "Bridge on the River Ty")
-    create_region(world, player, options, "Bridge on the River Ty - Underwater")
-    create_region(world, player, options, "Bridge on the River Ty - PF")
-    create_region(world, player, options, "Bridge on the River Ty - Beyond Broken Bridge")
-    create_region(world, player, options, "Bridge on the River Ty - Beyond Broken Bridge Underwater")
-    create_region(world, player, options, "Bridge on the River Ty - Beyond Broken Bridge - PF")
-    create_region(world, player, options, "Snow Worries")
-    create_region(world, player, options, "Snow Worries - PF")
-    create_region(world, player, options, "Snow Worries - Underwater")
-    create_region(world, player, options, "Outback Safari")
-    create_region(world, player, options, "Crikey's Cove")
-    create_region(world, player, options, "Lyre, Lyre Pants on Fire")
-    create_region(world, player, options, "Lyre, Lyre Pants on Fire - PF")
-    create_region(world, player, options, "Beyond the Black Stump")
-    create_region(world, player, options, "Beyond the Black Stump - PF")
-    create_region(world, player, options, "Beyond the Black Stump - Upper Area")
-    create_region(world, player, options, "Beyond the Black Stump - Glide Behind the Mountain")
-    create_region(world, player, options, "Beyond the Black Stump - Upper Area - PF")
-    create_region(world, player, options, "Rex Marks the Spot")
-    create_region(world, player, options, "Rex Marks the Spot - PF")
-    create_region(world, player, options, "Rex Marks the Spot - Underwater")
-    create_region(world, player, options, "Fluffy's Fjord")
-    create_region(world, player, options, "Cass' Pass")
-    create_region(world, player, options, "Cass' Crest")
-    create_region(world, player, options, "Final Battle")
+    create_region(world, player, options, "Prologue")
+    create_region(world, player, options, "127 Minutes")
+    create_region(world, player, options, "127 Minutes - UtM")
+    create_region(world, player, options, "127 Minutes - LL")
+    create_region(world, player, options, "Dam Busted")
+    create_region(world, player, options, "Dam Busted - SSSS")
+    create_region(world, player, options, "Dam Busted - CC")
+    create_region(world, player, options, "Three Hour Tour")
+    create_region(world, player, options, "Three Hour Tour - TT")
+    create_region(world, player, options, "Three Hour Tour - GGS")
+    create_region(world, player, options, "Fluffy's Follies")
+    create_region(world, player, options, "Black Stump BBQ")
+    create_region(world, player, options, "Black Stump BBQ - DNE")
+    create_region(world, player, options, "Black Stump BBQ - JS")
+    create_region(world, player, options, "Raise the TYtanic")
+    create_region(world, player, options, "Raise the TYtanic - TPB")
+    create_region(world, player, options, "Raise the TYtanic - VBW")
+    create_region(world, player, options, "Ranger in Danger")
+    create_region(world, player, options, "Ranger in Danger - DH")
+    create_region(world, player, options, "Ranger in Danger - DD")
+    create_region(world, player, options, "Sly Spy With My Little Eye")
+    create_region(world, player, options, "That Lost Island")
+    create_region(world, player, options, "That Lost Island - SD")
+    create_region(world, player, options, "That Lost Island - ML")
+    create_region(world, player, options, "Crabby Convoys")
+    create_region(world, player, options, "Crabby Convoys - LB")
+    create_region(world, player, options, "Crabby Convoys - DH")
+    create_region(world, player, options, "Fair Dinkum Drinking")
+    create_region(world, player, options, "Fair Dinkum Drinking - NPF")
+    create_region(world, player, options, "Fair Dinkum Drinking - SS")
+    create_region(world, player, options, "As TY Goes By...")
+    create_region(world, player, options, "Rang Shop")
+    create_region(world, player, options, "Costume Shop")
 
 
 def connect_all_regions(world: MultiWorld, player: int, options: Ty4Options, portal_map: List[int]):
@@ -169,30 +84,6 @@ def connect_all_regions(world: MultiWorld, player: int, options: Ty4Options, por
                     "Final Gauntlet", "Z1 -> E Zone")
     connect_regions(world, player, "Final Gauntlet",
                     "Final Gauntlet - PF", "E Zone - PF")
-    ent_a1 = connect_regions(world, player, "Bli Bli Station",
-                             ty4_levels[Ty4LevelCode(portal_map[0])], "A1 Portal")
-    ent_a2 = connect_regions(world, player, "Bli Bli Station Gate",
-                             ty4_levels[Ty4LevelCode(portal_map[1])], "A2 Portal")
-    ent_a3 = connect_regions(world, player, "Bli Bli Station Gate",
-                             ty4_levels[Ty4LevelCode(portal_map[2])], "A3 Portal")
-    connect_regions(world, player, "Bli Bli Station Gate",
-                    ty4_levels[Ty4LevelCode.A4], "A4 Portal")
-    ent_b1 = connect_regions(world, player, "Pippy Beach",
-                             ty4_levels[Ty4LevelCode(portal_map[3])], "B1 Portal")
-    ent_b2 = connect_regions(world, player, "Pippy Beach",
-                             ty4_levels[Ty4LevelCode(portal_map[4])], "B2 Portal")
-    ent_b3 = connect_regions(world, player, "Pippy Beach",
-                             ty4_levels[Ty4LevelCode(portal_map[5])], "B3 Portal")
-    connect_regions(world, player, "Pippy Beach",
-                    ty4_levels[Ty4LevelCode.D4], "D4 Portal")
-    ent_c1 = connect_regions(world, player, "Lake Burril",
-                             ty4_levels[Ty4LevelCode(portal_map[6])], "C1 Portal")
-    ent_c2 = connect_regions(world, player, "Lake Burril",
-                             ty4_levels[Ty4LevelCode(portal_map[7])], "C2 Portal")
-    ent_c3 = connect_regions(world, player, "Lake Burril",
-                             ty4_levels[Ty4LevelCode(portal_map[8])], "C3 Portal")
-    connect_regions(world, player, "Lake Burril",
-                    ty4_levels[Ty4LevelCode.C4], "C4 Portal")
     connect_regions(world, player, "Final Gauntlet",
                     "Cass' Pass", "E1 Portal")
     connect_regions(world, player, "Cass' Pass",

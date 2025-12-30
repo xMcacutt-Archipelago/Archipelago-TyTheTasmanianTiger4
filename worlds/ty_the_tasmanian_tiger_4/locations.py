@@ -38,18 +38,17 @@ def create_locations(player: int, options: Ty4Options, reg: Region):
     # Costume Shop
     create_locations_from_dict(costume_shop_dict, reg, player)
     # TALISMANS
-    create_locations_from_dict(talismans_dict, reg, player)
+    create_locations_from_dict(berry_dict, reg, player)
     # ATTRIBUTES
-    create_locations_from_dict(attributes_dict, reg, player)
-    # ELEMENTAL RANGS
-    create_locations_from_dict(elemental_rangs_dict, reg, player)
-
+    create_locations_from_dict(koala_dict, reg, player)
+    #THUNDER EGGS
+    create_locations_from_dict(thunder_egg_dict, reg, player)
 
 level_completion_dict = {
     "Prologue": LocData(0x1, "Prologue"),
-    "Up the Magpies": LocData(0x2, "127 Minutes - UtM"),
+    "Up the Magpies": LocData(0x2, "127 Minutes - UtM - Ice Wall"),
     "Lenny's List": LocData(0x3, "127 Minutes - LL"),
-    "127 Minutes": LocData(0x4, "127 Minutes"),
+    "127 Minutes": LocData(0x4, "127 Minutes"), #flame
     "Six Skink Shrink Sink": LocData(0x5, "Dam Busted - SSSS"),
     "Crocolossal Collapse": LocData(0x6, "Dam Busted - CC"),
     "Dam Busted": LocData(0x7, "Dam Busted"),
@@ -76,104 +75,171 @@ level_completion_dict = {
     "Nano-Proof Fence": LocData(0x1C, "Fair Dinkum Drinking - NPF"),
     "Sheepskin Sweatshop": LocData(0x1D, "Fair Dinkum Drinking - SS"),
     "Fair Dinkum Drinking": LocData(0x1E, "Fair Dinkum Drinking"),
-    "As TY Goes By...": LocData(0x1F, "As TY Goes By..."),
+    "Around the Back Way": LocData(0x1F, "As TY Goes By - ABW"),
+    "As TY Goes By...": LocData(0x20, "As TY Goes By..."),
 
 
 
 }
 
 rang_shop_dict = {
-    "Hyperang": LocData(0x20, "Rang Shop"),
-    "Chaosrang": LocData(0x21, "Rang Shop"),
-    "Deadlyrang": LocData(0x22, "Rang Shop"),
-    "Cryptorang": LocData(0x23, "Rang Shop"),
-    "Disruptorang": LocData(0x24, "Rang Shop"),
-    "Doomerang": LocData(0x25, "Rang Shop"),
+    "Hyperang": LocData(0x21, "Rang Shop"),
+    "Chaosrang": LocData(0x22, "Rang Shop"),
+    "Deadlyrang": LocData(0x23, "Rang Shop"),
+    "Cryptorang": LocData(0x24, "Rang Shop"),
+    "Disruptorang": LocData(0x25, "Rang Shop"),
+    "Doomerang": LocData(0x26, "Rang Shop"),
 
 }
 
 costume_shop_dict = {
-    "Ty1": LocData(0x26, "Costume Shop"),
-    "Ty2": LocData(0x27, "Costume Shop"),
-    "Bunyip Gauntlet": LocData(0x28, "Costume Shop"),
-    "Ty5": LocData(0x29, "Costume Shop"),
-    "Concept Ty": LocData(0x2A, "Costume Shop"),
-    "Retro Ty": LocData(0x2B, "Costume Shop"),
-    "Chicken Suit": LocData(0x2C, "Costume Shop"),
-    "Secret Agent": LocData(0x2D, "Costume Shop"),
-    "Rashy": LocData(0x2E, "Costume Shop"),
-    "Snow Warrior": LocData(0x2F, "Costume Shop"),
-    "Shazza": LocData(0x30, "Costume Shop"),
-    "Shazza the Dingo": LocData(0x31, "Costume Shop"),
-    "Sly": LocData(0x32, "Costume Shop"),
-    "Sly Cape": LocData(0x33, "Costume Shop"),
-    "Shadowy Figure": LocData(0x34, "Costume Shop"),
-    "Kid Sly": LocData(0x35, "Costume Shop"),
-    "Sly Fiver": LocData(0x36, "Costume Shop"),
-    "Naomi": LocData(0x37, "Costume Shop"),
-    "Producer Naomi": LocData(0x38, "Costume Shop"),
-    "Di": LocData(0x39, "Costume Shop"),
-    "Bri": LocData(0x3A, "Costume Shop"),
-    "Betty": LocData(0x3B, "Costume Shop"),
-    "Ridge": LocData(0x3C, "Costume Shop"),
-    "Landscaping Ridge": LocData(0x3D, "Costume Shop"),
-    "Brolga": LocData(0x3E, "Costume Shop"),
-    "Garden Brolga": LocData(0x3F, "Costume Shop"),
-    "Flinders": LocData(0x40, "Costume Shop"),
-    "Pippa": LocData(0x41, "Costume Shop"),
-    "Doomeranger": LocData(0x42, "Costume Shop"),
-    "Frill Disguise": LocData(0x43, "Costume Shop"),
-    "Cy X": LocData(0x44, "Costume Shop"),
-    "Cyber": LocData(0x45, "Costume Shop"),
-    "Skye": LocData(0x46, "Costume Shop"),
-    "Bligh": LocData(0x46, "Costume Shop"),
+    "Ty1": LocData(0x27, "Costume Shop"),
+    "Ty2": LocData(0x28, "Costume Shop"),
+    "Bunyip Gauntlet": LocData(0x29, "Costume Shop"),
+    "Ty5": LocData(0x2A, "Costume Shop"),
+    "Concept Ty": LocData(0x2B, "Costume Shop"),
+    "Retro Ty": LocData(0x2C, "Costume Shop"),
+    "Chicken Suit": LocData(0x2D, "Costume Shop"),
+    "Secret Agent": LocData(0x2E, "Costume Shop"),
+    "Rashy": LocData(0x2F, "Costume Shop"),
+    "Snow Warrior": LocData(0x30, "Costume Shop"),
+    "Shazza": LocData(0x31, "Costume Shop"),
+    "Shazza the Dingo": LocData(0x32, "Costume Shop"),
+    "Sly": LocData(0x33, "Costume Shop"),
+    "Sly Cape": LocData(0x34, "Costume Shop"),
+    "Shadowy Figure": LocData(0x35, "Costume Shop"),
+    "Kid Sly": LocData(0x36, "Costume Shop"),
+    "Sly Fiver": LocData(0x37, "Costume Shop"),
+    "Naomi": LocData(0x38, "Costume Shop"),
+    "Producer Naomi": LocData(0x39, "Costume Shop"),
+    "Di": LocData(0x3A, "Costume Shop"),
+    "Bri": LocData(0x3B, "Costume Shop"),
+    "Betty": LocData(0x3C, "Costume Shop"),
+    "Ridge": LocData(0x3D, "Costume Shop"),
+    "Landscaping Ridge": LocData(0x3E, "Costume Shop"),
+    "Brolga": LocData(0x3F, "Costume Shop"),
+    "Garden Brolga": LocData(0x40, "Costume Shop"),
+    "Flinders": LocData(0x41, "Costume Shop"),
+    "Pippa": LocData(0x42, "Costume Shop"),
+    "Doomeranger": LocData(0x43, "Costume Shop"),
+    "Frill Disguise": LocData(0x44, "Costume Shop"),
+    "Cy X": LocData(0x45, "Costume Shop"),
+    "Cyber": LocData(0x46, "Costume Shop"),
+    "Skye": LocData(0x47, "Costume Shop"),
+    "Bligh": LocData(0x48, "Costume Shop"),
+
+}
+
+minigame_dict = {
+    "Rainforest Run Time Attack": LocData(0x50, "127 Minutes - UtM - Ice Wall"),
+    "Treetop Terror Danger Arena": LocData(0x51, "127 Minutes - LL"),
+    "Red Rock Rush Time Attack": LocData(0x52, "Dam Busted - CC "),
+    "Sandy Shore Sprint Time Attack": LocData(0x53, "Three Hour Tour - GGS"),
+    "Surf Turkey": LocData(0x54, "Three Hour Tour"),
+    "Jive Turkey": LocData(0x55, "Black Stump BBQ - DNE"),
+    "Sleep With the Fishes Danger Arena": LocData(0x56, "Raise the TYtanic"),
+    "Outback Outrun Time Attack": LocData(0x57, "Ranger in Danger - DD"),
+    "Splash Wave Scuttle Time Attack": LocData(0x58, "That Lost Island - SD"),
+    "Scrub Turkey": LocData(0x59, "Crabby Convoys - LB"),
+    "Dusty Dust-Up": LocData(0x5A, "Fair Dinkum Drinking - SS"),
+
+}
+
+berry_dict = {
+    "Up the Magpies Berry 1": LocData(0x60, "127 Minutes - UtM"), # no reqs
+    "Up the Magpies Berry 2": LocData(0x61, "127 Minutes - UtM - Ice Wall"), # frosty
+    "Up the Magpies Berry 3": LocData(0x62, "127 Minutes - UtM - Ice Wall"), # end of level teleport shrooms
+    "Lenny's List Berry 1": LocData(0x63, "127 Minutes - LL"), # no reqs
+    "Lenny's List Berry 2": LocData(0x63, "127 Minutes - LL"), # shrooms after lenny's house
+    "Lenny's List Berry 3": LocData(0x63, "127 Minutes - LL"), # Flame
+    "127 Minutes Berry 1": LocData(0x64, "127 Minutes"), # stupid coyote time jump
+    "127 Minutes Berry 2": LocData(0x65, "127 Minutes"), # shrooms
+    "127 Minutes Berry 3": LocData(0x66, "127 Minutes"), # button at end
+    "Six Skink Shrink Sink Berry 1": LocData(0x67, "Dam Busted - SSSS"), # sheep
+    "Six Skink Shrink Sink Berry 2": LocData(0x68, "Dam Busted - SSSS"), # timed berry
+    "Six Skink Shrink Sink Berry 3": LocData(0x69, "Dam Busted - SSSS"), # no reqs
+    "Crocolossal Collapse Berry 1": LocData(0x6A, "Dam Busted - CC"), # no reqs
+    "Crocolossal Collapse Berry 2": LocData(0x6B, "Dam Busted - CC"), # infra
+    "Crocolossal Collapse Berry 3": LocData(0x6C, "Dam Busted - CC"), # no reqs
+    "Dam Busted Berry 1": LocData(0x6D, "Dam Busted"), # infra
+    "Dam Busted Berry 2": LocData(0x6E, "Dam Busted"), # infra
+    "Dam Busted Berry 3": LocData(0x6F, "Dam Busted"), # infra at end
+    "Tidal Trouble Berry 1": LocData(0x70, "Three Hour Tour - TT"), # underwater at start
+    "Tidal Trouble Berry 2": LocData(0x71, "Three Hour Tour - TT"), # Flame, Frosty
+    "Tidal Trouble Berry 3": LocData(0x72, "Three Hour Tour - TT"), # Shrooms
+    "Ghastly Ghost Ships Berry 1": LocData(0x73, "Three Hour Tour - GGS"), # Shrooms to behind start
+    "Ghastly Ghost Ships Berry 2": LocData(0x74, "Three Hour Tour - GGS"), # infra
+    "Ghastly Ghost Ships Berry 3": LocData(0x75, "Three Hour Tour - GGS"), # Lenny's insanely difficult puzzle
+    "Three Hour Tour Berry 1": LocData(0x76, "Three Hour Tour"), # Infra
+    "Three Hour Tour Berry 2": LocData(0x77, "Three Hour Tour"), # Shrooms
+    "Three Hour Tour Berry 3": LocData(0x78, "Three Hour Tour"), # Infra
+    "Dag Nab 'Em Berry 1": LocData(0x79, "Black Stump BBQ - DNE"), # Infra
+    "Dag Nab 'Em Berry 2": LocData(0x7A, "Black Stump BBQ - DNE"), # Button lower elevator in cave
+    "Dag Nab 'Em Berry 3": LocData(0x7B, "Black Stump BBQ - DNE"), # Button at far left side of sheep drop down
+    "Jack Squats Berry 1": LocData(0x7C, "Black Stump BBQ - JS"), # Infra
+    "Jack Squats Berry 2": LocData(0x7D, "Black Stump BBQ - JS"), # Flame behind dennis museum
+    "Jack Squats Berry 3": LocData(0x7E, "Black Stump BBQ - JS"), # Above dennis museum
+    "Black Stump BBQ Berry 1": LocData(0x7F, "Black Stump BBQ"), # fan platform cave at start
+    "Black Stump BBQ Berry 2": LocData(0x80, "Black Stump BBQ"), # behind dunny before flame 2
+    "Black Stump BBQ Berry 3": LocData(0x81, "Black Stump BBQ"), # Shrooms at koala 1
+
+}
+
+koala_dict = {
+    "Up the Magpies Koala 1": LocData(0x100, "127 Minutes - UtM - Ice Wall"), # teleport shrooms
+    "Up the Magpies Koala 2": LocData(0x101, "127 Minutes - UtM - Ice Wall"), #no reqs
+    "Lenny's List Koala 1": LocData(0x102, "127 Minutes - LL"), # no reqs
+    "Lenny's List Koala 2": LocData(0x103, "127 Minutes - LL"), # infra
+    "127 Minutes Koala 1": LocData(0x104, "127 Minutes"), # no reqs
+    "127 Minutes Koala 2": LocData(0x105, "127 Minutes"), # target quick run
+    "Six Skink Shrink Sink Koala 1": LocData(0x106, "Dam Busted - SSSS"), # no reqs
+    "Six Skink Shrink Sink Koala 2": LocData(0x107, "Dam Busted - SSSS"), # no reqs
+    "Crocolossal Collapse Koala 1": LocData(0x108, "Dam Busted - CC"), # no reqs
+    "Crocolossal Collapse Koala 2": LocData(0x109, "Dam Busted - CC"), # no reqs
+    "Dam Busted Koala 1": LocData(0x10A, "Dam Busted"), # Zappy
+    "Dam Busted Koala 2": LocData(0x10B, "Dam Busted"), # Delayed glide off of bouncy shroom
+    "Tidal Trouble Koala 1": LocData(0x10C, "Three Hour Tour - TT"), # Flame
+    "Tidal Trouble Koala 2": LocData(0x10D, "Three Hour Tour - TT"), # Behind Cacti in cave hidden underwater
+    "Ghastly Ghost Ships Koala 1": LocData(0x10E, "Three Hour Tour - GGS"), # timed target
+    "Ghastly Ghost Ships Koala 2": LocData(0x10F, "Three Hour Tour - GGS"), # no reqs
+    "Three Hour Tour Koala 1": LocData(0x110, "Three Hour Tour"), # Underwater near start
+    "Three Hour TOur Koala 2": LocData(0x111, "Three Hour Tour"), # Underwater near Keith
+    "Dag Nab 'Em Koala 1": LocData(0x112, "Black Stump BBQ - DNE"), # elevated platforms near sheep
+    "Dag Nab 'Em Koala 2": LocData(0x113, "Black Stump BBQ - DNE"), # Infra at end
+    "Jack Squats Koala 1": LocData(0x114, "Black Stump BBQ - JS"), # Underwater near start
+    "Jack Squats Koala 2": LocData(0x115, "Black Stump BBQ - JS"), # Drop down after Berry 1
+    "Black Stump BBQ Koala 1": LocData(0x116, "Black Stump BBQ"), # fan platform
+    "Black Stump BBQ Koala 2": LocData(0x117, "Black Stump BBQ"), # Spy eggs after Berry 3
+}
+
+thunder_egg_dict = {
+    "Up the Magpies - Boonie's Trophy": LocData(0x200, "127 Minutes - UtM - Ice Wall"),
+    "Lenny's List - Lenny's Package": LocData(0x201, "127 Minutes -  LL"),
+    "127 Minutes - Dennis Escort": LocData(0x202, "127 Minutes"), # Flame
+    "Six Skink Shrink Sink - Polluting Skinks": LocData(0x203, "Dam Busted - SSSS"),
+    "Crocolossal Collapse - Escort Ranger Ken": LocData(0x204, "Dam Busted - CC"), # Flame
+    "Dam Busted OoB Thunder Egg 1": LocData(0x205, "Dam Busted"), # OoB at start
+    "Dam Busted OoB Thunder Egg 2": LocData(0x206, "Dam Busted"), # OoB at start
+    "Dam Busted OoB Thunder Egg 3": LocData(0x207, "Dam Busted"), # OoB at start
+    "Dam Busted - Plug the Dam": LocData(0x208, "Dam Busted"),
+    "Tidal Trouble - Tidal Turbines": LocData(0x209, "Three Hour Tour - TT"),
+    "Ghastly Ghost Ships - Ghost Ships": LocData(0x20A, "Three Hour Tour - GGS"), # Infra
+    "Three Hour Tour - Rescue Keith": LocData(0x20B, "Three Hour Tour"),
+    "Dag Nab 'Em - Bruno's Sheep": LocData(0x20C, "Black Stump BBQ - DNE"),
+    "Jack Squats - Save the Thunder Egg Museum": LocData(0x20D, "Black Stump BBQ - JS"),
+    "Black Stump BBQ - Save the Lab": LocData(0x20E, "Black Stump BBQ"),
 
 
 }
 
-picture_frames_dict = {
-}
 
-attributes_dict = {
-}
-
-talismans_dict = {
-}
-
-elemental_rangs_dict = {
-}
-
-scales_dict = {
-}
-
-opals_dict = {
-}
-
-time_attack_challenge_dict = {
-}
-
-signposts_dict = {
-}
-
-
-extra_lives_dict = {
-}
-
-conditional_items_dict = {
-}
 
 ty4_location_table = {
     **level_completion_dict,
     **rang_shop_dict,
     **costume_shop_dict,
-    **picture_frames_dict,
-    **attributes_dict,
-    **talismans_dict,
-    **elemental_rangs_dict,
-    **scales_dict,
-    **signposts_dict,
-    **extra_lives_dict,
-    **time_attack_challenge_dict,
-    **opals_dict,
-    **conditional_items_dict
+    **minigame_dict,
+    **berry_dict,
+    **koala_dict,
+    **thunder_egg_dict,
 }

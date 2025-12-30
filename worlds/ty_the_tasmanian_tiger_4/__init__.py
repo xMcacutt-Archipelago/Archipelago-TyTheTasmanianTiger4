@@ -7,8 +7,7 @@ from worlds.AutoWorld import WebWorld, World
 from .items import Ty4Item, ty4_item_table, create_items, ItemData, place_locked_items
 from .locations import ty4_location_table, Ty4Location
 from .options import Ty4Options, ty4_option_groups
-from .regions import create_regions, connect_regions, ty4_levels, Ty4LevelCode, connect_all_regions, ty4_core_levels, \
-    ty4_levels_short
+from .regions import create_regions, connect_regions, connect_all_regions
 from .rules import set_rules
 
 
@@ -40,10 +39,6 @@ class Ty4World(World):
     topology_present = True
     item_name_to_id = {name: item.code for name, item in ty4_item_table.items()}
     location_name_to_id = {name: item.code for name, item in ty4_location_table.items()}
-    region_name_to_code = {name: code for code, name in ty4_levels.items()}
-    portal_map: List[int] = [Ty4LevelCode.A1.value, Ty4LevelCode.A2.value, Ty4LevelCode.A3.value,
-                                    Ty4LevelCode.B1.value, Ty4LevelCode.B2.value, Ty4LevelCode.B3.value,
-                                    Ty4LevelCode.C1.value, Ty4LevelCode.C2.value, Ty4LevelCode.C3.value]
     trap_weights = {}
 
     web = Ty4Web()
@@ -54,9 +49,6 @@ class Ty4World(World):
     def __init__(self, multiworld: MultiWorld, player: int):
         super().__init__(multiworld, player)
         self.itempool = []
-        self.portal_map = [Ty4LevelCode.A1.value, Ty4LevelCode.A2.value, Ty4LevelCode.A3.value,
-                           Ty4LevelCode.B1.value, Ty4LevelCode.B2.value, Ty4LevelCode.B3.value,
-                           Ty4LevelCode.C1.value, Ty4LevelCode.C2.value, Ty4LevelCode.C3.value]
 
     def fill_slot_data(self) -> id:
         return {
@@ -66,20 +58,11 @@ class Ty4World(World):
             "ProgressiveLevel": self.options.progressive_level.value,
             "LevelUnlockStyle": self.options.level_unlock_style.value,
             "TheggGating": self.options.thegg_gating.value,
-            "CogGating": self.options.cog_gating.value,
             "ReqBosses": self.options.req_bosses.value,
-            "GateTimeAttacks": self.options.gate_time_attacks.value,
             "PortalMap": self.portal_map,
-            "FramesRequireInfra": self.options.frames_require_infra.value,
-            "Scalesanity": self.options.scalesanity.value,
-            "Signsanity": self.options.signsanity.value,
-            "Lifesanity": self.options.lifesanity.value,
-            "Framesanity": self.options.framesanity.value,
-            "Opalsanity": self.options.opalsanity.value,
             "AdvancedLogic": self.options.logic_difficulty.value,
             "DeathLink": self.options.death_link.value,
             "MulTyLink": self.options.mul_ty_link.value,
-            "ExtraTheggs": self.options.extra_theggs.value,
             "ExtraCog": self.options.extra_cogs.value,
         }
 
@@ -87,47 +70,8 @@ class Ty4World(World):
         # UT Stuff Here
         self.handle_ut_yamless(None)
 
-        extra_thegg_count = self.options.extra_theggs * 3
-        extra_cog_count = self.options.extra_cogs
-        empty_cog_checks = 90 - (self.options.cog_gating * 6)
-        empty_thegg_checks = 72 - (self.options.thegg_gating * 3)
-        frame_count = 127 if self.options.framesanity == 0 else 9 if self.options.framesanity == 1 else 0
-        scale_count = 25 if self.options.scalesanity else 0
-        portal_items = 0 if self.options.level_unlock_style == 0 else 12 if self.options.level_unlock_style == 1 else 9
-        excess_checks = 18 - portal_items
-        excess_checks += frame_count + scale_count + empty_cog_checks + empty_thegg_checks
-        total_unbalanced = extra_thegg_count + extra_cog_count
-        if extra_thegg_count + extra_cog_count > excess_checks:
-            print("[WARN] Ty4 - Thegg and Cog count in item pool is larger than remaining checks.")
-            overflow = total_unbalanced - excess_checks
-            cog_contribution_ratio = extra_cog_count / total_unbalanced
-            thegg_contribution_ratio = extra_thegg_count / total_unbalanced
 
-            reduce_cogs = int(round(overflow * cog_contribution_ratio, 0))
-            reduce_theggs = int(round(overflow * thegg_contribution_ratio, 0))
-
-            reduce_cogs = min(self.options.extra_cogs.value, reduce_cogs)
-            reduce_theggs = min(self.options.extra_theggs.value, int(reduce_theggs / 3))
-            rounding_error = overflow - (reduce_cogs + (reduce_theggs * 3))
-            if 0 < rounding_error < 3 and self.options.extra_cogs - reduce_cogs > 0:
-                reduce_cogs += rounding_error
-
-            self.options.extra_cogs.value = extra_cog_count - int(reduce_cogs)
-            self.options.extra_theggs.value = int(extra_thegg_count / 3) - int(reduce_theggs)
-
-            thegg_count = self.options.extra_theggs * 3
-            cog_count = self.options.extra_cogs
-
-            if thegg_count + cog_count > excess_checks:
-                print("[ERROR] Ty4 - Could not automatically reduce counts. Something is very wrong.")
-                raise OptionError()
-            else:
-                print("[INFO] Ty4 - Extra Theggs and Cogs have been reduced to avoid unplaced items.")
         self.trap_weights = {
-            "Knocked Down Trap": self.options.knocked_down_trap_weight.value,
-            "Slow Trap": self.options.slow_trap_weight.value,
-            "Gravity Trap": self.options.gravity_trap_weight.value,
-            "Acid Trap": self.options.acid_trap_weight.value,
             "Exit Trap": self.options.exit_trap_weight.value,
         }
 
@@ -148,78 +92,7 @@ class Ty4World(World):
         create_regions(self.multiworld, self.options, self.player)
         place_locked_items(self.multiworld, self.player)
         self.create_event("Bull's Pen", "Beat Bull")
-        self.create_event("Crikey's Cove", "Beat Crikey")
-        self.create_event("Fluffy's Fjord", "Beat Fluffy")
-        self.create_event("Cass' Crest", "Beat Shadow")
-        self.create_event("Final Battle", "Beat Cass")
-        connect_all_regions(self.multiworld, self.player, self.options, self.portal_map)
 
     def set_rules(self):
         set_rules(self)
 
-    def extend_hint_information(self, hint_data: Dict[int, Dict[int, str]]):
-        new_hint_data = {}
-
-        for key, data in ty4_location_table.items():
-            try:
-                location: Location = self.multiworld.get_location(key, self.player)
-            except KeyError:
-                continue
-            region_name: str = data.region
-            containing_level_code: Ty4LevelCode = self.region_name_to_code.get(region_name)
-            if containing_level_code is None or containing_level_code not in ty4_core_levels:
-                continue
-
-            try:
-                level_index: int = self.portal_map.index(containing_level_code.value)
-            except ValueError:
-                continue
-
-            portal_code: int = level_index + 4
-            if level_index > 5:
-                portal_code = portal_code + 2
-            elif level_index > 2:
-                portal_code = portal_code + 1
-
-            try:
-                portal_name: str = ty4_levels_short[Ty4LevelCode(portal_code)]
-            except ValueError:
-                continue
-
-            new_hint_data[location.address] = f"{portal_name} Portal"
-            hint_data[self.player] = new_hint_data
-
-    def handle_ut_yamless(self, slot_data: Optional[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
-
-        if not slot_data \
-                and hasattr(self.multiworld, "re_gen_passthrough") \
-                and isinstance(self.multiworld.re_gen_passthrough, dict) \
-                and self.game in self.multiworld.re_gen_passthrough:
-            slot_data = self.multiworld.re_gen_passthrough[self.game]
-
-        if not slot_data:
-            return None
-
-        # fill in options
-        self.options.goal.value = slot_data["Goal"]
-        self.options.progressive_elementals.value = slot_data["ProgressiveElementals"]
-        self.options.progressive_level.value = slot_data["ProgressiveLevel"]
-        self.options.level_unlock_style.value = slot_data["LevelUnlockStyle"]
-        self.options.thegg_gating.value = slot_data["TheggGating"]
-        self.options.cog_gating.value = slot_data["CogGating"]
-        self.options.req_bosses.value = slot_data["ReqBosses"]
-        self.options.gate_time_attacks.value = slot_data["GateTimeAttacks"]
-        self.portal_map = slot_data["PortalMap"]
-        self.options.frames_require_infra.value = slot_data["FramesRequireInfra"]
-        self.options.scalesanity.value = slot_data["Scalesanity"]
-        self.options.signsanity.value = slot_data["Signsanity"]
-        self.options.lifesanity.value = slot_data["Lifesanity"]
-        self.options.framesanity.value = slot_data["Framesanity"]
-        self.options.opalsanity.value = slot_data["Opalsanity"]
-        self.options.logic_difficulty.value = slot_data["AdvancedLogic"]
-        self.options.death_link.value = slot_data["DeathLink"]
-        self.options.mul_ty_link.value = slot_data["MulTyLink"]
-        self.options.extra_theggs.value = slot_data[ "ExtraTheggs"]
-        self.options.extra_cogs.value = slot_data[ "ExtraCog"]
-
-        return slot_data

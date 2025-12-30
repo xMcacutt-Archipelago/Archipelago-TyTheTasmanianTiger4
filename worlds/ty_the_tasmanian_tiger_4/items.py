@@ -3,7 +3,6 @@ from typing import Dict, Optional
 
 
 from BaseClasses import Item, ItemClassification, MultiWorld, Location
-from worlds.ty_the_tasmanian_tiger_4.regions import ty4_levels, Ty4LevelCode
 from worlds.ty_the_tasmanian_tiger_4.options import Ty4Options
 
 
@@ -41,22 +40,7 @@ def create_items(world: MultiWorld, options: Ty4Options, player: int):
     total_location_count: int = len(world.get_unfilled_locations(player))
 
     # Generic
-    create_multiple("Fire Thunder Egg",
-                    options.thegg_gating.value - 3, world, player, ItemClassification.progression_skip_balancing)
-    create_multiple("Fire Thunder Egg",
-                    options.extra_theggs.value, world, player, ItemClassification.filler)
-    create_multiple("Ice Thunder Egg",
-                    options.thegg_gating.value - 3, world, player, ItemClassification.progression_skip_balancing)
-    create_multiple("Ice Thunder Egg",
-                    options.extra_theggs.value, world, player, ItemClassification.filler)
-    create_multiple("Air Thunder Egg",
-                    options.thegg_gating.value - 3, world, player, ItemClassification.progression_skip_balancing)
-    create_multiple("Air Thunder Egg",
-                    options.extra_theggs.value, world, player, ItemClassification.filler)
-    create_multiple("Golden Cog",
-                    options.cog_gating.value * 6, world, player, ItemClassification.progression_skip_balancing)
-    create_multiple("Golden Cog",
-                    options.extra_cogs.value, world, player, ItemClassification.filler)
+    create_multiple("Fire Thunder Egg", 4, world, player)
 
     # Bilbies
     create_multiple("Bilby - Two Up", 5, world, player)
@@ -69,17 +53,6 @@ def create_items(world: MultiWorld, options: Ty4Options, player: int):
     create_multiple("Bilby - Beyond the Black Stump", 5, world, player)
     create_multiple("Bilby - Rex Marks the Spot", 5, world, player)
 
-    # Stopwatches
-    if options.gate_time_attacks:
-        create_single("Stopwatch - Two Up", world, player)
-        create_single("Stopwatch - Walk in the Park", world, player)
-        create_single("Stopwatch - Ship Rex", world, player)
-        create_single("Stopwatch - Bridge on the River Ty", world, player)
-        create_single("Stopwatch - Snow Worries", world, player)
-        create_single("Stopwatch - Outback Safari", world, player)
-        create_single("Stopwatch - Lyre, Lyre Pants on Fire", world, player)
-        create_single("Stopwatch - Beyond the Black Stump", world, player)
-        create_single("Stopwatch - Rex Marks the Spot", world, player)
 
     # Attributes
     if options.progressive_elementals:
@@ -94,12 +67,9 @@ def create_items(world: MultiWorld, options: Ty4Options, player: int):
         create_single("Frostyrang", world, player)
         create_single("Zappyrang", world, player)
         create_single("Doomerang", world, player)
-    if options.scalesanity:
-        create_single("Extra Health", world, player)
     create_single("Zoomerang", world, player)
     create_single("Multirang", world, player)
-    create_single("Infrarang", world, player,
-                  ItemClassification.progression if options.frames_require_infra else ItemClassification.useful)
+    create_single("Infrarang", world, player)
     create_single("Megarang", world, player)
     create_single("Kaboomarang", world, player)
     create_single("Chronorang", world, player)
@@ -109,27 +79,6 @@ def create_items(world: MultiWorld, options: Ty4Options, player: int):
     create_single("Cockatoo Talisman", world, player)
     create_single("Dingo Talisman", world, player)
     create_single("Tiger Talisman", world, player)
-
-    # Levels
-    if options.level_unlock_style != 0:
-        if options.progressive_level:
-            level_count = 12 if options.level_unlock_style == 1 else 9
-            create_multiple("Progressive Level", level_count, world, player)
-        else:
-            for levelIndex, portal_value in enumerate(world.worlds[player].portal_map):
-                if levelIndex == 0:
-                    continue
-                portal_name = f"Portal - {ty4_levels[Ty4LevelCode(portal_value)]}"
-                create_single(portal_name, world, player)
-            create_single("Portal - Cass' Pass", world, player)
-            if options.level_unlock_style == 1:
-                create_single("Portal - Bull's Pen", world, player)
-                create_single("Portal - Crikey's Cove", world, player)
-                create_single("Portal - Fluffy's Fjord", world, player)
-
-    if options.opalsanity:
-        junk_weights["Picture Frame"] += junk_weights["Opal Magnet"]
-        junk_weights["Opal Magnet"] = 0
 
     # Junk
     remaining_locations: int = total_location_count - len(world.worlds[player].itempool)
@@ -198,20 +147,18 @@ ty4_item_table: Dict[str, ItemData] = {
 
     # Levels
     "Progressive Level": ItemData(0x8750071, ItemClassification.progression),
-    "Portal - Two Up": ItemData(0x8750030, ItemClassification.progression),
-    "Portal - Walk in the Park": ItemData(0x8750031, ItemClassification.progression),
-    "Portal - Ship Rex": ItemData(0x8750032, ItemClassification.progression),
-    "Portal - Bull's Pen": ItemData(0x8750033, ItemClassification.progression),
-    "Portal - Bridge on the River Ty": ItemData(0x8750034, ItemClassification.progression),
-    "Portal - Snow Worries": ItemData(0x8750035, ItemClassification.progression),
-    "Portal - Outback Safari": ItemData(0x8750036, ItemClassification.progression),
-    "Portal - Crikey's Cove": ItemData(0x8750037, ItemClassification.progression),
-    "Portal - Lyre, Lyre Pants on Fire": ItemData(0x8750038, ItemClassification.progression),
-    "Portal - Beyond the Black Stump": ItemData(0x8750039, ItemClassification.progression),
-    "Portal - Rex Marks the Spot": ItemData(0x875003A, ItemClassification.progression),
-    "Portal - Fluffy's Fjord": ItemData(0x875003B, ItemClassification.progression),
-    "Portal - Cass' Pass": ItemData(0x875003C, ItemClassification.progression),
-
+    "Level - 127 Minutes": ItemData(0x8750030, ItemClassification.progression),
+    "Level - Dam Busted": ItemData(0x8750031, ItemClassification.progression),
+    "Level - Three Hour Tour": ItemData(0x8750032, ItemClassification.progression),
+    "Level - Fluffy's Follies": ItemData(0x8750033, ItemClassification.progression),
+    "Level - Black Stump BBQ": ItemData(0x8750034, ItemClassification.progression),
+    "Level - Raise the TYtanic": ItemData(0x8750035, ItemClassification.progression),
+    "Level - Ranger in Danger": ItemData(0x8750036, ItemClassification.progression),
+    "Level - Sly SPy With My Little Eye": ItemData(0x8750037, ItemClassification.progression),
+    "Level - That Lost Island": ItemData(0x8750038, ItemClassification.progression),
+    "Level - Crabby Convoys": ItemData(0x8750039, ItemClassification.progression),
+    "Level - Fair Dinkum Drinking": ItemData(0x875003A, ItemClassification.progression),
+    "Level - As TY Goes By": ItemData(0x875003B, ItemClassification.progression),
 
     # Junk
     "Picture Frame":  ItemData(0x8750080, ItemClassification.filler),
