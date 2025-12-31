@@ -182,7 +182,15 @@ berry_dict = {
     "Black Stump BBQ Berry 1": LocData(0x7F, "Black Stump BBQ"), # fan platform cave at start
     "Black Stump BBQ Berry 2": LocData(0x80, "Black Stump BBQ"), # behind dunny before flame 2
     "Black Stump BBQ Berry 3": LocData(0x81, "Black Stump BBQ"), # Shrooms at koala 1
-
+    "Treasure of the Parrot's Beard Berry 1": LocData(0x82, "Raise the TYtanic - TPB"), # drop down at start
+    "Treasure of the Parrot's Beard Berry 2": LocData(0x83, "Raise the TYtanic - TPB"), # underwater below parrotbeard
+    "Treasure of the Parrot's Beard Berry 3": LocData(0x84, "Raise the TYtanic - TPB"), # underwater in next section after parrotbeard
+    "Voyage to the Bottom of the Water Berry 1": LocData(0x85, "Raise the TYtanic - VBW"),
+    "Voyage to the Bottom of the Water Berry 2": LocData(0x86, "Raise the TYtanic - VBW"),
+    "Voyage to the Bottom of the Water Berry 3": LocData(0x87, "Raise the TYtanic - VBW"),
+    "Raise the TYtanic Berry 1": LocData(0x88, "Raise the TYtanic"), # Left underwater below Lenny
+    "Raise the TYtanic Berry 2": LocData(0x89, "Raise the TYtanic"), # Right underwater below lenny - Timed button
+    "Raise the TYtanic Berry 3": LocData(0x8A, "Raise the TYtanic"), # Up and left after clam section - Infra
 }
 
 koala_dict = {
@@ -210,6 +218,12 @@ koala_dict = {
     "Jack Squats Koala 2": LocData(0x115, "Black Stump BBQ - JS"), # Drop down after Berry 1
     "Black Stump BBQ Koala 1": LocData(0x116, "Black Stump BBQ"), # fan platform
     "Black Stump BBQ Koala 2": LocData(0x117, "Black Stump BBQ"), # Spy eggs after Berry 3
+    "Treasure of the Parrot's Beard Koala 1": LocData(0x118, "Raise the TYtanic - TPB"), # above parrotbeard
+    "Treasure of the Parrot's Beard Koala 2": LocData(0x119, "Raise the TYtanic - TPB"), # cliffs above Ty the Whale
+    "Voyage to the Bottom of the Water Koala 1": LocData(0x120, "Raise the TYtanic - VBW"),
+    "Voyage to the Bottom of the Water Koala 2": LocData(0x121, "Raise the TYtanic - VBW"),
+    "Raise the TYtanic Koala 1": LocData(0x122, "Raise the TYtanic"), # Underwater bottom right hidden by seagrass
+    "Raise the TYtanic Koala 2": LocData(0x123, "Raise the TYtanic"), # Fan platform final area
 }
 
 thunder_egg_dict = {
@@ -228,6 +242,10 @@ thunder_egg_dict = {
     "Dag Nab 'Em - Bruno's Sheep": LocData(0x20C, "Black Stump BBQ - DNE"),
     "Jack Squats - Save the Thunder Egg Museum": LocData(0x20D, "Black Stump BBQ - JS"),
     "Black Stump BBQ - Save the Lab": LocData(0x20E, "Black Stump BBQ"),
+    "Treasure of the Parrot's Beard - Parrotbeard's Treasure": LocData(0x20F, "Raise the TYtanic - TPB"),
+    "Voyage to the Bottom of the Water - Sea Dragon Kids": LocData(0x210, "Raise the TYtanic - VBW"),
+    "Raise the TYtanic - Save the Ship": LocData(0x211, "Raise the TYtanic"),
+
 
 
 }
