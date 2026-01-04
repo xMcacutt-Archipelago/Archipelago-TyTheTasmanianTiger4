@@ -75,7 +75,7 @@ level_completion_dict = {
     "Nano-Proof Fence": LocData(0x1C, "Fair Dinkum Drinking - NPF"), #Zappy
     "Sheepskin Sweatshop": LocData(0x1D, "Fair Dinkum Drinking - SS"), #Zappy Flame
     "Fair Dinkum Drinking": LocData(0x1E, "Fair Dinkum Drinking"),
-    "Around the Back Way": LocData(0x1F, "As TY Goes By - ABW"),
+    "Around the Back Way": LocData(0x1F, "As TY Goes By... - ABW"),
     "As TY Goes By...": LocData(0x20, "As TY Goes By..."), #Infinirang
 
 
@@ -320,24 +320,24 @@ thunder_egg_dict = {
     "Nano-Proof Fence - Fence Patches": LocData(0x21B, "Fair Dinkum Drinking - NPF"), #Frosty
     "Sheepskin Sweatshop - Bruno's Sheep 2: Electric Boogaloo": LocData(0x21C, "Fair Dinkum Drinking - SS"),
     "Fair Dinkum Drinking - Thirsty Thylacines": LocData(0x21D, "Fair Dinkum Drinking"),
-    "127 Minutes - Berry Completion": LocData(0x21E, "127 Minutes"),
-    "127 Minutes - Koala Completion": LocData(0x21F, "127 Minutes"),
-    "Dam Busted - Berry Completion": LocData(0x220, "Dam Busted"),
-    "Dam Busted - Koala Completion": LocData(0x221, "Dam Busted"),
-    "Three Hour Tour - Berry Completion": LocData(0x222, "Three Hour Tour"),
-    "Three Hour Tour - Koala Completion": LocData(0x223, "Three Hour Tour"),
-    "Black Stump BBQ - Berry Completion": LocData(0x224, "Black Stump BBQ"),
-    "Black Stump BBQ - Koala Completion": LocData(0x225, "Black Stump BBQ"),
-    "Raise the TYtanic - Berry Completion": LocData(0x226, "Raise the TYtanic"),
-    "Raise the TYtanic - Koala Completion": LocData(0x227, "Raise the TYtanic"),
-    "Ranger in Danger - Berry Completion": LocData(0x228, "Ranger in Danger"),
-    "Ranger in Danger - Koala Completion": LocData(0x229, "Ranger in Danger"),
-    "That Lost Island - Berry Completion": LocData(0x22A, "That Lost Island"),
-    "That Lost Island - Koala Completion": LocData(0x22B, "That Lost Island"),
-    "Crabby Convoys - Berry Completion": LocData(0x22C, "Crabby Convoys"),
-    "Crabby Convoys - Koala Completion": LocData(0x22D, "Crabby Convoys"),
-    "Fair Dinkum Drinking - Berry Completion": LocData(0x22E, "Fair Dinkum Drinking"),
-    "Fair Dinkum Drinking - Koala Completion": LocData(0x22F, "Fair Dinkum Drinking"),
+    "127 Minutes - Berry Completion": LocData(0x21E, "127 Minutes - All"),
+    "127 Minutes - Koala Completion": LocData(0x21F, "127 Minutes - All"),
+    "Dam Busted - Berry Completion": LocData(0x220, "Dam Busted - All"),
+    "Dam Busted - Koala Completion": LocData(0x221, "Dam Busted - All"),
+    "Three Hour Tour - Berry Completion": LocData(0x222, "Three Hour Tour - All"),
+    "Three Hour Tour - Koala Completion": LocData(0x223, "Three Hour Tour - All"),
+    "Black Stump BBQ - Berry Completion": LocData(0x224, "Black Stump BBQ - All"),
+    "Black Stump BBQ - Koala Completion": LocData(0x225, "Black Stump BBQ - All"),
+    "Raise the TYtanic - Berry Completion": LocData(0x226, "Raise the TYtanic - All"),
+    "Raise the TYtanic - Koala Completion": LocData(0x227, "Raise the TYtanic - All"),
+    "Ranger in Danger - Berry Completion": LocData(0x228, "Ranger in Danger - All"),
+    "Ranger in Danger - Koala Completion": LocData(0x229, "Ranger in Danger - All"),
+    "That Lost Island - Berry Completion": LocData(0x22A, "That Lost Island - All"),
+    "That Lost Island - Koala Completion": LocData(0x22B, "That Lost Island - All"),
+    "Crabby Convoys - Berry Completion": LocData(0x22C, "Crabby Convoys - All"),
+    "Crabby Convoys - Koala Completion": LocData(0x22D, "Crabby Convoys - All"),
+    "Fair Dinkum Drinking - Berry Completion": LocData(0x22E, "Fair Dinkum Drinking - All"),
+    "Fair Dinkum Drinking - Koala Completion": LocData(0x22F, "Fair Dinkum Drinking - All"),
 }
 
 
