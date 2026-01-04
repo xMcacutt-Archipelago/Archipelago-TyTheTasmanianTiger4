@@ -74,11 +74,6 @@ def create_items(world: MultiWorld, options: Ty4Options, player: int):
     create_single("Kaboomarang", world, player)
     create_single("Chronorang", world, player)
 
-    create_single("Frog Talisman", world, player)
-    create_single("Platypus Talisman", world, player)
-    create_single("Cockatoo Talisman", world, player)
-    create_single("Dingo Talisman", world, player)
-    create_single("Tiger Talisman", world, player)
 
     # Junk
     remaining_locations: int = total_location_count - len(world.worlds[player].itempool)
@@ -133,7 +128,6 @@ class ItemData:
 ty4_item_table: Dict[str, ItemData] = {
 
     # Rangs
-    "Ironbark Rang": ItemData(0x8750070, ItemClassification.useful),
     "Blazerang": ItemData(0x8750010, ItemClassification.progression),
     "Blizzarang": ItemData(0x8750011, ItemClassification.progression),
     "Doomerang": ItemData(0x8750012, ItemClassification.progression),
@@ -161,9 +155,6 @@ ty4_item_table: Dict[str, ItemData] = {
     "Level - As TY Goes By": ItemData(0x875003B, ItemClassification.progression),
 
     # Junk
-    "Picture Frame":  ItemData(0x8750080, ItemClassification.filler),
-    "Extra Life": ItemData(0x8750082, ItemClassification.filler),
-    "Opal Magnet": ItemData(0x8750083, ItemClassification.filler),
     "Quarter Pie": ItemData(0x8750084, ItemClassification.filler),
     "Full Pie": ItemData(0x8750085, ItemClassification.filler),
 
@@ -173,9 +164,6 @@ ty4_item_table: Dict[str, ItemData] = {
 
 
 junk_weights = {
-    "Picture Frame": 25,
-    "Extra Life": 15,
-    "Opal Magnet": 30,
     "Quarter Pie": 20,
     "Full Pie": 10,
 }
