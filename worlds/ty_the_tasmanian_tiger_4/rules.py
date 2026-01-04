@@ -65,6 +65,9 @@ def get_rules(world):
             "Black Stump BBQ":
                 lambda state:
                     state.has("Blizzarang", world.player),
+            "DIVE HARD":
+                lambda state:
+                state.has("Blizzarang", world.player),
         }
     }
     return rules
