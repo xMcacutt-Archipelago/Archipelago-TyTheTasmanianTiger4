@@ -118,12 +118,6 @@ class ExitTrapWeight(Range):
     default = 20
 
 
-class MulTyLink(Toggle):
-    """Whether other players connecting to the same slot should see each other.
-    This is soft limited to 8 players per slot. Use with caution."""
-    display_name = "Mul-Ty Link"
-
-
 ty4_option_groups = [
     OptionGroup("Goal Options", [
         Goal,
@@ -148,7 +142,7 @@ ty4_option_groups = [
         DeathLink
     ]),
     OptionGroup("Mul-Ty Link", [
-        MulTyLink
+
     ])
 ]
 
@@ -173,4 +167,3 @@ class Ty4Options(PerGameCommonOptions):
     trap_fill_percentage: TrapFill
     exit_trap_weight: ExitTrapWeight
 
-    mul_ty_link: MulTyLink
