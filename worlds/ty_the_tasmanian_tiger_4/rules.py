@@ -1,5 +1,6 @@
 import enum
 from typing import Dict
+from .items import level_names
 
 from BaseClasses import CollectionState
 
@@ -72,6 +73,10 @@ def get_rules(world):
     }
     return rules
 
+def create_events(world):
+    for level_name in level_names:
+        world.create_event(level_name, f"{level_name} Complete", "Level Complete")
+
 
 def set_rules(world):
     from . import Ty4World
@@ -89,4 +94,7 @@ def set_rules(world):
         except KeyError:
             pass
 
+    world.create_event("As Ty Goes By...", "Beat Cass", "Beat Cass")
+    world.get_location("Beat Cass").access_rule = lambda state:\
+        state.has("Infinirang", world.player) or state.has("Progressive Rang", world.player, 4)
     world.multiworld.completion_condition[world.player] = lambda state: state.has("Beat Cass", world.player)
