@@ -25,7 +25,7 @@ def create_region(world: Ty4World, name: str):
     world.multiworld.regions.append(reg)
 
 
-def create_regions(world: Ty4World, reg: Region):
+def create_regions(world: Ty4World):
     create_region(world, "Menu")
     create_region(world, "Prologue")
     create_region(world, "Fluffy's Follies")
