@@ -29,22 +29,6 @@ class ProgressiveElementals(DefaultOnToggle):
     display_name = "Progressive Elemental Rangs"
 
 
-class LevelUnlockStyle(Choice):
-    """
-    Determines how levels are unlocked
-
-    Vanilla: All levels are unlocked from the start of the world
-
-    Checks: The first level is unlocked from the start but all other levels are unlocked via checks
-
-    Checks - No Bosses: The first level will be unlocked from the start. Bosses can be unlocked via hub Thunder Egg counts. All other levels must be unlocked via checks
-    """
-    display_name = "Level Unlock Style"
-    option_vanilla = 0
-    option_checks = 1
-    option_checks_no_bosses = 2
-    default = 2
-
 
 class ProgressiveLevel(DefaultOnToggle):
     """
@@ -104,7 +88,6 @@ ty4_option_groups = [
         ProgressiveElementals,
         ThunderEggGating,
         ExtraCogs,
-        LevelUnlockStyle,
         ProgressiveLevel,
     ]),
     OptionGroup("Sanity Options", [
@@ -132,7 +115,6 @@ class Ty4Options(PerGameCommonOptions):
     thegg_gating: ThunderEggGating
     extra_cogs: ExtraCogs
 
-    level_unlock_style: LevelUnlockStyle
     progressive_level: ProgressiveLevel
 
 
