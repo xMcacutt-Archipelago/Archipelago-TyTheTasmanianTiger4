@@ -47,8 +47,15 @@ def connect_all_regions(world: Ty4World):
                     "Costume Shop", "Menu -> Costume Shop")
     connect_regions(world, "Menu",
                     "Prologue", "Menu -> Prologue")
+    connect_regions(world, "Menu",
+                    "As Ty Goes By...", "Menu -> As Ty Goes By...")
+
     for level_name in level_names:
         connect_regions(world, "Menu", level_name, f"Menu -> {level_name}")
+
     connect_regions(world, "127 Minutes - Up the Magpies",
                     "127 Minutes - Up the Magpies - Ice Wall", "Up the Magpies Ice Wall")
+
+    for hub_level_name in hub_level_names:
+        connect_regions(world, "Menu", f"{hub_level_name} - All", f"Menu -> {hub_level_name} - All")
 
