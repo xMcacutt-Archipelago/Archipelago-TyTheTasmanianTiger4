@@ -1,5 +1,3 @@
-import math
-from typing import Dict, Optional
 from worlds.ty_the_tasmanian_tiger_4 import *
 
 from BaseClasses import Item, ItemClassification, MultiWorld, Location
