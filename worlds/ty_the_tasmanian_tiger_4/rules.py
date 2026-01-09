@@ -56,16 +56,16 @@ def get_rules(world):
                     state.can_reach_location("Tiger Talisman", world.player)
         },
         "entrances": {
-            "Dag Nab 'Em":
+            "Menu -> Dag Nab 'Em":
                 lambda state:
                     state.has("Blizzarang", world.player),
-            "Jack Squats":
+            "Menu -> Jack Squats":
                 lambda state:
                     state.has("Blizzarang", world.player),
-            "Black Stump BBQ":
+            "Menu -> Black Stump BBQ":
                 lambda state:
                     state.has("Blizzarang", world.player),
-            "DIVE HARD":
+            "Menu -> DIVE HARD":
                 lambda state:
                 state.has("Blizzarang", world.player),
         }
