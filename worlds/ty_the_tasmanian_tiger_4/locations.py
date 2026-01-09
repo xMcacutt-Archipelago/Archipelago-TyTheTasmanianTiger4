@@ -319,6 +319,7 @@ thunder_egg_dict = {
     "Nano-Proof Fence - Fence Patches": LocData(0x21B, "Fair Dinkum Drinking - Nano-Proof Fence"), #Frosty
     "Sheepskin Sweatshop - Bruno's Sheep 2: Electric Boogaloo": LocData(0x21C, "Fair Dinkum Drinking - Sheepskin Sweatshop"),
     "Fair Dinkum Drinking - Thirsty Thylacines": LocData(0x21D, "Fair Dinkum Drinking"),
+    #Completion Eggs
     "127 Minutes - Berry Completion": LocData(0x21E, "127 Minutes - All"),
     "127 Minutes - Koala Completion": LocData(0x21F, "127 Minutes - All"),
     "Dam Busted - Berry Completion": LocData(0x220, "Dam Busted - All"),
