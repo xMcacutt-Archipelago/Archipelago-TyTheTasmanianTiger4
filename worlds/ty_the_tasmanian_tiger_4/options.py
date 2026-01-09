@@ -21,35 +21,12 @@ class GoalRequiresBosses(Toggle):
     display_name = "Goal Requires Bosses"
 
 
-class LogicDifficulty(Choice):
-    """
-    What set of logic to use
-
-    Standard: The logic assumes elemental rangs are required to enter hubs
-
-    Advanced: Assumes hubs may be entered early and elemental rangs are optional
-
-    Doom: Assumes checks can be completed with the bare-minimum of items. WARNING: MAY CAUSE SUFFERING!
-    """
-    display_name = "Logic Difficulty"
-    option_standard = 0
-    option_advanced = 1
-    option_doom = 2
-    default = 0
-
 
 class ProgressiveElementals(DefaultOnToggle):
     """
     Determines if elemental rangs are a progressive check
     """
     display_name = "Progressive Elemental Rangs"
-
-
-class LevelShuffle(Toggle):
-    """
-    Determines whether the levels that portals lead to will be shuffled
-    """
-    display_name = "Level Shuffle"
 
 
 class LevelUnlockStyle(Choice):
@@ -124,13 +101,11 @@ ty4_option_groups = [
         GoalRequiresBosses,
     ]),
     OptionGroup("Logic Options", [
-        LogicDifficulty,
         ProgressiveElementals,
         ThunderEggGating,
         ExtraCogs,
         LevelUnlockStyle,
         ProgressiveLevel,
-        LevelShuffle,
     ]),
     OptionGroup("Sanity Options", [
     ]),
@@ -152,13 +127,11 @@ class Ty4Options(PerGameCommonOptions):
     goal: Goal
     req_bosses: GoalRequiresBosses
 
-    logic_difficulty: LogicDifficulty
     progressive_elementals: ProgressiveElementals
 
     thegg_gating: ThunderEggGating
     extra_cogs: ExtraCogs
 
-    level_shuffle: LevelShuffle
     level_unlock_style: LevelUnlockStyle
     progressive_level: ProgressiveLevel
 
