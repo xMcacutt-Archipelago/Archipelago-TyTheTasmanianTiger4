@@ -72,14 +72,12 @@ def create_regions(world: MultiWorld, options: Ty4Options, player: int):
 
 
 def connect_all_regions(world: MultiWorld, player: int, options: Ty4Options, portal_map: List[int]):
-    if options.level_shuffle and not hasattr(world, "re_gen_passthrough"):
-        world.random.shuffle(portal_map)
     connect_regions(world, player, "Menu",
-                    "Rainbow Cliffs", "Menu -> Z1")
-    connect_regions(world, player, "Rainbow Cliffs",
-                    "Rainbow Cliffs - PF", "Z1 - PF")
-    connect_regions(world, player, "Rainbow Cliffs",
-                    "Bli Bli Station", "Z1 -> A Zone")
+                    "Rang Shop", "Menu -> Rang Shop")
+    connect_regions(world, player, "Menu",
+                    "Costume Shop", "Menu -> Costume Shop")
+    connect_regions(world, player, "Menu",
+                    "Prologue", "Menu -> Prologue")
     connect_regions(world, player, "Bli Bli Station",
                     "Bli Bli Station Gate", "A Zone Gate")
     connect_regions(world, player, "Bli Bli Station Gate",
