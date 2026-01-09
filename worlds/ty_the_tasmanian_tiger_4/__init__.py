@@ -1,14 +1,13 @@
 import dataclasses
 from typing import List, Dict, Optional, Any
-from BaseClasses import Item, MultiWorld, Tutorial, ItemClassification, Region, Location
-from Options import OptionError, PerGameCommonOptions
+from BaseClasses import Item, MultiWorld, Tutorial, ItemClassification, Region, Location, LocationProgressType
 from worlds.AutoWorld import WebWorld, World
 
-from .items import Ty4Item, ty4_item_table, create_items, ItemData, place_locked_items
+from .items import Ty4Item, ty4_item_table, create_items, ItemData
 from .locations import ty4_location_table, Ty4Location
 from .options import Ty4Options, ty4_option_groups
 from .regions import create_regions, connect_regions, connect_all_regions
-from .rules import set_rules
+from .rules import set_rules, create_events
 
 
 class Ty4Web(WebWorld):
@@ -33,7 +32,7 @@ class Ty4World(World):
     Use your wits and boomerangs to find hidden treasures, help the colorful locals,
     and uncover the mysteries of the land Down Under.
     """
-    game: str = "Ty the Tasmanian Tiger 4"
+    game = "Ty the Tasmanian Tiger 4"
     options_dataclass = Ty4Options
     options: Ty4Options
     topology_present = True
@@ -51,18 +50,19 @@ class Ty4World(World):
         self.itempool = []
 
     def fill_slot_data(self) -> id:
+        # from Utils import visualize_regions
+        # state = self.multiworld.get_all_state(False)
+        # state.update_reachable_regions(self.player)
+        # visualize_regions(self.get_region("Menu"), f"{self.player_name}_world.puml",
+        #                  show_entrance_names=True, regions_to_highlight=state.reachable_regions[self.player])
         return {
             "ModVersion": "1.0.0",
             "Goal": self.options.goal.value,
             "ProgressiveElementals": self.options.progressive_elementals.value,
             "ProgressiveLevel": self.options.progressive_level.value,
-            "LevelUnlockStyle": self.options.level_unlock_style.value,
             "TheggGating": self.options.thegg_gating.value,
             "ReqBosses": self.options.req_bosses.value,
-            "PortalMap": self.portal_map,
-            "AdvancedLogic": self.options.logic_difficulty.value,
             "DeathLink": self.options.death_link.value,
-            "MulTyLink": self.options.mul_ty_link.value,
             "ExtraCog": self.options.extra_cogs.value,
         }
 
@@ -80,19 +80,32 @@ class Ty4World(World):
         return Ty4Item(name, item_info.classification, item_info.code, self.player)
 
     def create_items(self):
-        create_items(self.multiworld, self.options, self.player)
+        create_items(self)
 
-    def create_event(self, region_name: str, event_name: str) -> None:
+    def create_event(self, region_name: str, event_loc_name: str, event_item_name: str) -> None:
         region: Region = self.multiworld.get_region(region_name, self.player)
-        loc: Ty4Location = Ty4Location(self.player, event_name, None, region)
-        loc.place_locked_item(Ty4Item(event_name, ItemClassification.progression, None, self.player))
+        loc: Ty4Location = Ty4Location(self.player, event_loc_name, None, region)
+        loc.place_locked_item(Ty4Item(event_item_name, ItemClassification.progression, None, self.player))
         region.locations.append(loc)
 
     def create_regions(self):
-        create_regions(self.multiworld, self.options, self.player)
-        place_locked_items(self.multiworld, self.player)
-        self.create_event("Bull's Pen", "Beat Bull")
+        create_regions(self)
+        connect_all_regions(self)
 
     def set_rules(self):
+        create_events(self)
         set_rules(self)
+
+        def extend_hint_information(self, hint_data: Dict[int, Dict[int, str]]):
+            new_hint_data = {}
+
+            for key, data in ty4_location_table.items():
+                try:
+                    location: Location = self.multiworld.get_location(key, self.player)
+                except KeyError:
+                    continue
+
+                    # new_hint_data{location.address} = f""
+
+                hint_data[self.player] = new_hint_data
 
