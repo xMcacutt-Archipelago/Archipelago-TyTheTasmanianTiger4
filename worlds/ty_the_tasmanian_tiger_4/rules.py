@@ -117,6 +117,71 @@ def get_rules(world):
                 lambda state: state.has("Fair Dinkum Drinking - Sheepskin Sweatshop Unlock", world.player),
             "Menu -> Fair Dinkum Drinking":
                 lambda state: state.has("Fair Dinkum Drinking Unlock", world.player),
+
+            "Menu -> 127 Minutes - All":
+                lambda state: state.has("127 Minutes Unlock", world.player)
+                    and state.has("127 Minutes - Up the Magpies Unlock", world.player)
+                    and state.has("127 Minutes - Lenny's List Unlock", world.player)
+                    and (state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1))
+                    and (state.has("Blizzarang", world.player) or state.has("Progressive Rang", world.player, 2))
+                    and state.has("Cryptorang", world.player),
+
+            "Menu -> Dam Busted - All":
+                lambda state: state.has("Dam Busted Unlock", world.player)
+                    and state.has("Dam Busted - Six Skink Shrink Sink Unlock", world.player)
+                    and state.has("Dam Busted - Crocolossal Collapse", world.player)
+                    and (state.has("Plasmarang", world.player) or state.has("Progressive Rang", world.player, 3))
+                    and state.has("Cryptorang", world.player),
+
+            "Menu -> Three Hour Tour - All":
+                lambda state: state.has("Three Hour Tour Unlock", world.player)
+                    and state.has("Three Hour Tour - Tidal Trouble Unlock", world.player)
+                    and state.has("Three Hour Tour - Ghastly Ghost Ships Unlock", world.player)
+                    and (state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1))
+                    and (state.has("Blizzerang", world.player) or state.has("Progressive Rang", world.player, 2))
+                    and state.has("Cryptorang", world.player),
+
+            "Menu -> Black Stump BBQ - All":
+                lambda state: state.has("Black Stump BBQ Unlock", world.player)
+                    and state.has("Black Stump BBQ - Dag Nab 'Em", world.player)
+                    and state.has("Black Stump BBQ - Jack Squats", world.player)
+                    and (state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1))
+                    and (state.has("Blizzerang", world.player) or state.has("Progressive Rang", world.player, 2))
+                    and state.has("Cryptorang", world.player),
+
+            "Menu -> Raise the TYtanic - All":
+                lambda state: state.has("Raise the TYtanic Unlock", world.player)
+                    and state.has("Raise the TYtanic - Treasure of the Parrot's Beard Unlock", world.player)
+                    and state.has("Raise the TYtanic - Voyage to the Bottom of the Water Unlock", world.player),
+
+            "Menu -> Ranger in Danger - All":
+                lambda state: state.has("Ranger in Danger Unlock", world.player)
+                    and state.has("Ranger in Danger - DIVE HARD", world.player)
+                    and state.has("Ranger in Danger - Dennis' Dilemma", world.player)
+                    and (state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1))
+                    and (state.has("Blizzerang", world.player) or state.has("Progressive Rang", world.player, 2))
+                    and state.has("Cryptorang", world.player),
+
+            "Menu -> That Lost Island - All":
+                lambda state: state.has("That Lost Island Unlock", world.player)
+                    and state.has("That Lost Island - Surf's Down", world.player)
+                    and state.has("That Lost Island - Mmmm... Lamingtons Unlock", world.player)
+                    and state.has("Cryptorang", world.player),
+
+            "Menu -> Crabby Convoys - All":
+                lambda state: state.has("Crabby Convoys Unlock", world.player)
+                    and state.has("Crabby Convoys - Lunchabiblies", world.player)
+                    and state.has("Crabby Convoys - DIVE HARDER", world.player)
+                    and (state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1))
+                    and (state.has("Plasmarang", world.player) or state.has("Progressive Rang", world.player, 3))
+                    and state.has("Cryptorang", world.player),
+
+            "Menu -> Fair Dinkum Drinking - All":
+                lambda state: state.has("Fair Dinkum Drinking Unlock", world.player)
+                    and state.has("Fair Dinkum Drinking - Nano-Proof Fence", world.player)
+                    and state.has("Fair Dinkum Drinking - Sheepskin Sweatshop", world.player)
+                    and (state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1))
+                    and state.has("Cryptorang", world.player),
         }
     }
     return rules
