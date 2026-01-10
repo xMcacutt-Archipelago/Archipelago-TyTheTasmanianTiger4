@@ -70,6 +70,7 @@ hub_level_names = [
 "Raise the TYtanic",
 "Ranger in Danger",
 "That Lost Island",
+"Crabby Convoys",
 "Fair Dinkum Drinking",
 ]
 
