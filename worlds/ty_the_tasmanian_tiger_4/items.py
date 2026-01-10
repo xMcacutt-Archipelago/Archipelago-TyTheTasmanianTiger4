@@ -37,7 +37,7 @@ level_names = [
 "127 Minutes - Lenny's List",
 "127 Minutes",
 "Dam Busted - Six Skink Shrink Sink",
-"Dam Busted -Crocolossal Collapse",
+"Dam Busted - Crocolossal Collapse",
 "Dam Busted",
 "Three Hour Tour -Tidal Trouble",
 "Three Hour Tour -Ghastly Ghost Ships",
