@@ -57,18 +57,66 @@ def get_rules(world):
                     state.can_reach_location("Tiger Talisman", world.player)
         },
         "entrances": {
-            "Menu -> Dag Nab 'Em":
-                lambda state:
-                    state.has("Blizzarang", world.player),
-            "Menu -> Jack Squats":
-                lambda state:
-                    state.has("Blizzarang", world.player),
+            "Menu -> 127 Minutes - Up the Magpies":
+                lambda state: state.has("127 Minutes - Up the Magpies Unlock", world.player),
+            "127 Minutes - Up the Magpies -> 127 Minutes - Up the Magpies - Ice Wall":
+                lambda state: state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1),
+            "Menu -> 127 Minutes - Lenny's List":
+                lambda state: state.has("127 Minutes - Lenny's List Unlock", world.player),
+            "Menu -> 127 Minutes":
+                lambda state: state.has("127 Minutes Unlock", world.player),
+            "Menu -> Dam Busted - Six Skink Shrink Sink":
+                lambda state: state.has("Dam Busted - Six Skink Shrink Sink Unlock", world.player),
+            "Menu -> Dam Busted - Crocolossal Collapse":
+                lambda state: state.has("Dam Busted - Crocolossal Collapse Unlock", world.player),
+            "Menu -> Dam Busted":
+                lambda state: state.has("Dam Busted Unlock", world.player),
+            "Menu -> Three Hour Tour - Tidal Trouble":
+                lambda state: state.has("Three Hour Tour -Tidal Trouble Unlock", world.player),
+            "Menu -> Three Hour Tour - Ghastly Ghost Ships":
+                lambda state: state.has("Three Hour Tour - Ghastly Ghost Ships Unlock", world.player),
+            "Menu -> Three Hour Tour":
+                lambda state: state.has("Three Hour Tour Unlock", world.player),
+            "Menu -> Black Stump BBQ - Dag Nab 'Em":
+                lambda state: state.has("Blizzarang", world.player)
+                    and state.has("Black Stump BBQ - Dag Nab 'Em Unlock", world.player),
+            "Menu -> Black Stump BBQ - Jack Squats":
+                lambda state: state.has("Black Stump BBQ - Jack Squats Unlock", world.player)
+                    and (state.has("Blizzarang", world.player) or state.has("Progressive Rang", world.player, 2)),
             "Menu -> Black Stump BBQ":
-                lambda state:
-                    state.has("Blizzarang", world.player),
-            "Menu -> DIVE HARD":
-                lambda state:
-                state.has("Blizzarang", world.player),
+                lambda state: state.has("Black Stump BBQ Unlock", world.player)
+                    and (state.has("Blizzarang", world.player) or state.has("Progressive Rang", world.player, 2)),
+            "Menu -> Raise the TYtanic - Treasure of the Parrot's Beard":
+                lambda state: state.has("Raise the TYtanic - Treasure of the Parrot's Beard Unlock", world.player),
+            "Menu -> Raise the TYtanic - Voyage to the Bottom of the Water":
+                lambda state: state.has("Raise the TYtanic - Voyage to the Bottom of the Water Unlock", world.player),
+            "Menu -> Raise the TYtanic":
+                lambda state: state.has("Raise the TYtanic Unlock", world.player),
+            "Menu -> Ranger in Danger - DIVE HARD":
+                lambda state: state.has("Ranger in Danger - DIVE HARD Unlock", world.player)
+                    and (state.has("Blizzarang", world.player) or state.has("Progressive Rang", world.player, 2)),
+            "Menu -> Ranger in Danger - Dennis' Dilemma":
+                lambda state: state.has("Ranger in Danger - Dennis' Dilemma Unlock", world.player),
+            "Menu -> Ranger in Danger":
+                lambda state: state.has("Ranger in Danger Unlock", world.player),
+            "Menu -> That Lost Island - Surf's Down":
+                lambda state: state.has("That Lost Island - Surf's Down Unlock", world.player),
+            "Menu -> That Lost Island - Mmmm... Lamingtons":
+                lambda state: state.has("That Lost Island - Mmmm... Lamingtons Unlock", world.player),
+            "Menu -> That Lost Island":
+                lambda state: state.has("That Lost Island Unlock", world.player),
+            "Menu -> Crabby Convoys - Lunchabiblies":
+                lambda state: state.has("Crabby Convoys - Lunchabiblies Unlock", world.player),
+            "Menu -> Crabby Convoys - DIVE HARDER":
+                lambda state: state.has("Crabby Convoys - DIVE HARDER Unlock", world.player),
+            "Menu -> Crabby Convoys":
+                lambda state: state.has("Crabby Convoys Unlock", world.player),
+            "Menu -> Fair Dinkum Drinking - Nano-Proof Fence":
+                lambda state: state.has("Fair Dinkum Drinking - Nano-Proof Fence Unlock", world.player),
+            "Menu -> Fair Dinkum Drinking - Sheepskin Sweatshop":
+                lambda state: state.has("Fair Dinkum Drinking - Sheepskin Sweatshop Unlock", world.player),
+            "Menu -> Fair Dinkum Drinking":
+                lambda state: state.has("Fair Dinkum Drinking Unlock", world.player),
         }
     }
     return rules
