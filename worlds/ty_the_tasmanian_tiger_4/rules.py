@@ -122,8 +122,8 @@ def get_rules(world):
                 lambda state: state.has("127 Minutes Unlock", world.player)
                     and state.has("127 Minutes - Up the Magpies Unlock", world.player)
                     and state.has("127 Minutes - Lenny's List Unlock", world.player)
-                    and (state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1))
-                    and (state.has("Blizzarang", world.player) or state.has("Progressive Rang", world.player, 2))
+                    and (state.has("Blazerang", world.player) and state.has("Blizzarang", world.player)
+                         or state.has("Progressive Rang", world.player, 2))
                     and state.has("Cryptorang", world.player),
 
             "Menu -> Dam Busted - All":
@@ -137,16 +137,16 @@ def get_rules(world):
                 lambda state: state.has("Three Hour Tour Unlock", world.player)
                     and state.has("Three Hour Tour - Tidal Trouble Unlock", world.player)
                     and state.has("Three Hour Tour - Ghastly Ghost Ships Unlock", world.player)
-                    and (state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1))
-                    and (state.has("Blizzerang", world.player) or state.has("Progressive Rang", world.player, 2))
+                    and (state.has("Blazerang", world.player) and state.has("Blizzerang", world.player)
+                         or state.has("Progressive Rang", world.player, 2))
                     and state.has("Cryptorang", world.player),
 
             "Menu -> Black Stump BBQ - All":
                 lambda state: state.has("Black Stump BBQ Unlock", world.player)
                     and state.has("Black Stump BBQ - Dag Nab 'Em", world.player)
                     and state.has("Black Stump BBQ - Jack Squats", world.player)
-                    and (state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1))
-                    and (state.has("Blizzerang", world.player) or state.has("Progressive Rang", world.player, 2))
+                    and (state.has("Blazerang", world.player) and state.has("Blizzerang", world.player)
+                         or state.has("Progressive Rang", world.player, 2))
                     and state.has("Cryptorang", world.player),
 
             "Menu -> Raise the TYtanic - All":
@@ -158,8 +158,8 @@ def get_rules(world):
                 lambda state: state.has("Ranger in Danger Unlock", world.player)
                     and state.has("Ranger in Danger - DIVE HARD", world.player)
                     and state.has("Ranger in Danger - Dennis' Dilemma", world.player)
-                    and (state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1))
-                    and (state.has("Blizzerang", world.player) or state.has("Progressive Rang", world.player, 2))
+                    and (state.has("Blazerang", world.player) and state.has("Blizzerang", world.player)
+                         or state.has("Progressive Rang", world.player, 2))
                     and state.has("Cryptorang", world.player),
 
             "Menu -> That Lost Island - All":
@@ -172,8 +172,8 @@ def get_rules(world):
                 lambda state: state.has("Crabby Convoys Unlock", world.player)
                     and state.has("Crabby Convoys - Lunchabiblies", world.player)
                     and state.has("Crabby Convoys - DIVE HARDER", world.player)
-                    and (state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1))
-                    and (state.has("Plasmarang", world.player) or state.has("Progressive Rang", world.player, 3))
+                    and (state.has("Blazerang", world.player) and state.has("Plasmarang", world.player)
+                         or state.has("Progressive Rang", world.player, 3))
                     and state.has("Cryptorang", world.player),
 
             "Menu -> Fair Dinkum Drinking - All":
