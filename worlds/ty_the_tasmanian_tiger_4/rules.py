@@ -14,35 +14,34 @@ def get_rules(world):
     rules = {
         "locations": {
 
-            "Attribute - Zoomerang":
+            "127 Minutes":
                 lambda state:
-                    state.has("Golden Cog", world.player, world.options.cog_gating * 1),
-            "Attribute - Multirang":
+                    state.has("Blazerang", world.player) or state.has("Progressive Rang", world.player, 1),
+            "DIVE HARD":
                 lambda state:
-                    state.has("Golden Cog", world.player, world.options.cog_gating * 2),
-            "Rainbow Cliffs - All Picture Frames":
+                    state.has("Blizzerang", world.player) or state.has("Progressive Rang", world.player, 2),
+            "Dennis' Dilemma":
                 lambda state:
-                    state.can_reach_region("Final Gauntlet - PF", world.player) and
-                    state.can_reach_region("Pippy Beach - PF", world.player) and
-                    state.can_reach_region("Bli Bli Station Gate - PF", world.player),
-            "WitP - Time Attack Challenge":
+                    state.has("Blizzerang", world.player) or state.has("Progressive Rang", world.player, 2),
+            "Surf's Down":
                 lambda state:
-                    state.can_reach_location("WitP - Wombat Race", world.player),
-            "Snow Worries - Time Attack Challenge":
+                    state.has("Plasmarang", world.player) or state.has("Progressive Rang", world.player, 3),
+            "Mmmm... Lamingtons":
                 lambda state:
-                    state.can_reach_location("Snow Worries - Time Attack", world.player),
-            "Outback Safari - Time Attack Challenge":
+                    state.has("Plasmarang", world.player) or state.has("Progressive Rang", world.player, 3),
+            "That Lost Island":
                 lambda state:
-                    state.can_reach_location("Outback Safari - Race Shazza", world.player),
-            "LLPoF - Time Attack Challenge":
+                    state.has("Plasmarang", world.player) or state.has("Progressive Rang", world.player, 3),
+            "Nano-Proof Fence":
                 lambda state:
-                    state.can_reach_location("LLPoF - Time Attack", world.player),
-            "BtBS - Time Attack Challenge":
+                    state.has("Plasmarang", world.player) or state.has("Progressive Rang", world.player, 3),
+            "Sheepskin Sweatshop":
                 lambda state:
-                    state.can_reach_location("BtBS - Wombat Rematch", world.player),
-            "Beat Bull":
+                (state.has("Blazerang", world.player) and state.has("Plasmarang", world.player))
+                    or state.has("Progressive Rang", world.player, 3),
+            "As TY Goes By...":
                 lambda state:
-                    state.can_reach_location("Frog Talisman", world.player),
+                    state.has("Infinirang", world.player) or state.has("Progressive Rang", world.player, 4),
             "Beat Crikey":
                 lambda state:
                     state.can_reach_location("Platypus Talisman", world.player),
@@ -56,6 +55,8 @@ def get_rules(world):
                 lambda state:
                     state.can_reach_location("Tiger Talisman", world.player)
         },
+
+
         "entrances": {
             "Menu -> 127 Minutes - Up the Magpies":
                 lambda state: state.has("127 Minutes - Up the Magpies Unlock", world.player),
