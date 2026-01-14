@@ -265,7 +265,7 @@ koala_dict = {
     "Dennis' Dilemma Koala 1": LocData(0x12B, "Ranger in Danger - Dennis' Dilemma"), # infra above first water wheel
     "Dennis' Dilemma Koala 2": LocData(0x12C, "Ranger in Danger - Dennis' Dilemma"), # Frosty up and left after 2nd freeze log
     "Ranger in Danger Koala 1": LocData(0x12D, "Ranger in Danger"), # down and left from first dunny, hit buttons above
-    "Ranger in Danger Koala 2": LocData(0x12E, "Ranger in Danger"), # Infra up after 2nd rock run"Surf's Down Berry 1": LocData(0x90, "That Lost Island - SD"), #
+    "Ranger in Danger Koala 2": LocData(0x12E, "Ranger in Danger"), # Infra up after 2nd rock run
     "Surf's Down Koala 1": LocData(0x12F, "That Lost Island - Surf's Down"), # Up Right from Time Attack - Timed Button
     "Surf's Down Koala 2": LocData(0x130, "That Lost Island - Surf's Down"), # Infra Platforming left of Rex
     "Mmmm... Lamingtons Koala 1": LocData(0x131, "That Lost Island - Mmmm... Lamingtons"), # Bottom of water at start
