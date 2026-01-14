@@ -1,4 +1,3 @@
-from BaseClasses import Location, Region
 from worlds.ty_the_tasmanian_tiger_4 import *
 
 class Ty4Location(Location):

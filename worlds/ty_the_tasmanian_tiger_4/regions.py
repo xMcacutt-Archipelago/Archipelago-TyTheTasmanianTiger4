@@ -1,8 +1,6 @@
-from enum import Enum
-
-from BaseClasses import MultiWorld, Region, Entrance
+from BaseClasses import Entrance
 from worlds.ty_the_tasmanian_tiger_4 import *
-from typing import List, Dict
+from typing import List
 from .items import level_names, hub_level_names
 from worlds.ty_the_tasmanian_tiger_4.locations import create_locations
 
