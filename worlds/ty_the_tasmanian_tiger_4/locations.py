@@ -294,9 +294,9 @@ thunder_egg_dict = {
     "127 Minutes - Dennis Escort": LocData(0x202, "127 Minutes"), # Flame
     "Six Skink Shrink Sink - Polluting Skinks": LocData(0x203, "Dam Busted - Six Skink Shrink Sink"),
     "Crocolossal Collapse - Escort Ranger Ken": LocData(0x204, "Dam Busted - Crocolossal Collapse"), # Flame
-    "Dam Busted OoB Thunder Egg 1": LocData(0x205, "Dam Busted"), # OoB at start
-    "Dam Busted OoB Thunder Egg 2": LocData(0x206, "Dam Busted"), # OoB at start
-    "Dam Busted OoB Thunder Egg 3": LocData(0x207, "Dam Busted"), # OoB at start
+    #"Dam Busted OoB Thunder Egg 1": LocData(0x205, "Dam Busted"), # OoB at start
+    #"Dam Busted OoB Thunder Egg 2": LocData(0x206, "Dam Busted"), # OoB at start
+    #"Dam Busted OoB Thunder Egg 3": LocData(0x207, "Dam Busted"), # OoB at start
     "Dam Busted - Plug the Dam": LocData(0x208, "Dam Busted"),
     "Tidal Trouble - Tidal Turbines": LocData(0x209, "Three Hour Tour - Tidal Trouble"),
     "Ghastly Ghost Ships - Ghost Ships": LocData(0x20A, "Three Hour Tour - Ghastly Ghost Ships"), # Infra
