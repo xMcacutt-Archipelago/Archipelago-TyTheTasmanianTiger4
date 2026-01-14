@@ -279,7 +279,7 @@ koala_dict = {
     "Crabby Convoys Koala 1": LocData(0x139, "Crabby Convoys"), # Up from first crabdozer
     "Crabby Convoys Koala 2": LocData(0x13A, "Crabby Convoys"), # Infra after crabdozer 3
     "Nano-Proof Fence Koala 1": LocData(0x13B, "Fair Dinkum Drinking - Nano-Proof Fence"), # Infra above start
-    "Nano-Proof Fence Koala 2": LocData(0x13C, "Fair Dinkum Drinking - Nano-Proof Fence"), # Light all 4 torches to open gate by Shazza
+    "Nano-Proof Fence Koala 2": LocData(0x13C, "Fair Dinkum Drinking - Nano-Proof Fence"), # Flame light all 4 torches to open gate by Shazza
     "Sheepskin Sweatshop Koala 1": LocData(0x13D, "Fair Dinkum Drinking - Sheepskin Sweatshop"), # Above first sheep
     "Sheepskin Sweatshop Koala 2": LocData(0x13E, "Fair Dinkum Drinking - Sheepskin Sweatshop"), # Flame above lenny's danger zone
     "Fair Dinkum Drinking Koala 1": LocData(0x13F, "Fair Dinkum Drinking"), # Infra Cave below 2nd pipe
