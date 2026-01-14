@@ -1,6 +1,6 @@
 from worlds.ty_the_tasmanian_tiger_4 import *
 
-from BaseClasses import Item, ItemClassification, MultiWorld, Location
+from BaseClasses import Item, ItemClassification
 
 
 class Ty4Item(Item):
