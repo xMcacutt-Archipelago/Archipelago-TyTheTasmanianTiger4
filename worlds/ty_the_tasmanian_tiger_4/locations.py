@@ -130,17 +130,17 @@ costume_shop_dict = {
 }
 
 minigame_dict = {
-    "Rainforest Run Time Attack": LocData(0x49, "127 Minutes - Up the Magpies - Ice Wall"),
-    "Treetop Terror Danger Arena": LocData(0x4A, "127 Minutes - Lenny's List"),
-    "Red Rock Rush Time Attack": LocData(0x4B, "Dam Busted - Crocolossal Collapse "),
-    "Sandy Shore Sprint Time Attack": LocData(0x4C, "Three Hour Tour - Ghastly Ghost Ships"),
-    "Surf Turkey": LocData(0x4D, "Three Hour Tour"),
-    "Jive Turkey": LocData(0x4E, "Black Stump BBQ - Dag Nab 'Em"),
-    "Sleep With the Fishes Danger Arena": LocData(0x4F, "Raise the TYtanic"),
-    "Outback Outrun Time Attack": LocData(0x50, "Ranger in Danger - Dennis' Dilemma"),
-    "Splash Wave Scuttle Time Attack": LocData(0x51, "That Lost Island - Surf's Down"),
-    "Scrub Turkey": LocData(0x52, "Crabby Convoys - Lunchabiblies"),
-    "Dusty Dust-Up": LocData(0x53, "Fair Dinkum Drinking - Sheepskin Sweatshop"),
+    "Rainforest Run Time Attack": LocData(0x49, "127 Minutes - Up the Magpies - Ice Wall"), # No Reqs
+    "Treetop Terror Danger Arena": LocData(0x4A, "127 Minutes - Lenny's List"), # Frosty
+    "Red Rock Rush Time Attack": LocData(0x4B, "Dam Busted - Crocolossal Collapse "), # No Reqs
+    "Sandy Shore Sprint Time Attack": LocData(0x4C, "Three Hour Tour - Ghastly Ghost Ships"), # No Reqs
+    "Surf Turkey": LocData(0x4D, "Three Hour Tour"), # No Reqs
+    "Jive Turkey": LocData(0x4E, "Black Stump BBQ - Dag Nab 'Em"), #Frosty - covered by region
+    "Sleep With the Fishes Danger Arena": LocData(0x4F, "Raise the TYtanic"), # No Reqs
+    "Outback Outrun Time Attack": LocData(0x50, "Ranger in Danger - Dennis' Dilemma"), # No Reqs
+    "Splash Wave Scuttle Time Attack": LocData(0x51, "That Lost Island - Surf's Down"), # No Reqs
+    "Scrub Turkey": LocData(0x52, "Crabby Convoys - Lunchabiblies"), # No Reqs
+    "Dusty Dust-Up Danger Arena": LocData(0x53, "Fair Dinkum Drinking - Sheepskin Sweatshop"), # No Reqs
 
 }
 
