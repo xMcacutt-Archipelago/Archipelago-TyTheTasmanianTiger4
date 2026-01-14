@@ -88,7 +88,7 @@ def create_items(world: Ty4World):
 
 
     # Rangs
-    if options.progressive_elementals:
+    if Ty4Options.progressive_elementals:
         create_multiple("Progressive Rang", 4, world)
     else:
         create_single("Blazerang", world)
@@ -105,7 +105,7 @@ def create_items(world: Ty4World):
 
     # Junk
     remaining_locations: int = total_location_count - len(world.multiworld.worlds[world.player].itempool)
-    trap_count: int = round(remaining_locations * options.trap_fill_percentage / 100)
+    trap_count: int = round(remaining_locations * Ty4Options.trap_fill_percentage / 100)
     junk_count: int = remaining_locations - trap_count
     junk = get_junk_item_names(world.random, junk_count)
     for name in junk:
