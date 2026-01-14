@@ -49,6 +49,165 @@ def get_rules(world):
             "Treetop Terror Danger Arena":
                 lambda state:
                     can_freeze(world, state),
+            "Up the Magpies Berry 2":
+                lambda state:
+                    can_freeze(world, state),
+            "Lenny's List Berry 3":
+                lambda state:
+                    can_burn(world, state),
+            "Crocolossal Collapse Berry 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Dam Busted Berry 1":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Dam Busted Berry 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Dam Busted Berry 3":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Tidal Trouble Berry 2":
+                lambda state:
+                    can_burn(world, state) and can_freeze(world, state),
+            "Ghastly Ghost Ships Berry 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Three Hour Tour Berry 1":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Three Hour Tour Berry 3":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Dag Nab 'Em Berry 1":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Jack Squats Berry 1":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Jack Squats Berry 2":
+                lambda state:
+                    can_burn(world, state),
+            "Raise the TYtanic Berry 3":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "DIVE HARD Berry 1":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "DIVE HARD Berry 2":
+                lambda state:
+                    can_burn(world, state),
+            "DIVE HARD Berry 3":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Dennis' Dilemma Berry 2":
+                lambda state:
+                    can_burn(world, state) and can_freeze(world, state),
+            "Dennis' Dilemma Berry 3":
+                lambda state:
+                    can_freeze(world, state),
+            "Ranger in Danger Berry 1":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Ranger in Danger Berry 2":
+                lambda state:
+                    can_freeze(world, state),
+            "Ranger in Danger Berry 3":
+                lambda state:
+                    can_freeze(world, state),
+            "That Lost Island Berry 1":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "That Lost Island Berry 3":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Lunchabiblies Berry 3":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "DIVE HARDER Berry 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "DIVE HARDER Berry 3":
+                lambda state:
+                    can_zap(world, state),
+            "Crabby Convoys Berry 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Crabby Convoys Berry 3":
+                lambda state:
+                    can_burn(world, state),
+            "Nano-Proof Fence Berry 1":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Nano-Proof Fence Berry 3":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Sheepskin Sweatshop Berry 3":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Fair Dinkum Drinking Berry 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Lenny's List Koala 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Dam Busted Koala 1":
+                lambda state:
+                    can_zap(world, state),
+            "Tidal Trouble Koala 1":
+                lambda state:
+                    can_burn(world,state),
+            "Dag Nab 'Em Koala 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Dennis' Dilemma Koala 1":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Dennis' Dilemma Koala 2":
+                lambda state:
+                    can_freeze(world, state),
+            "Ranger in Danger Koala 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Surf's Down Koala 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Mmmm... Lamingtons Koala 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Lunchabiblies Koala 1":
+                lambda state:
+                    can_freeze(world, state) and state.has("Cryptorang", world.player),
+            "Lunchabiblies Koala 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Crabby Convoys Koala 2":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Nano-Proof Fence Koala 1":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Nano-Proof Fence Koala 2":
+                lambda state:
+                    can_burn(world, state),
+            "Sheepskin Sweatshop Koala 2":
+                lambda state:
+                    can_burn(world, state),
+            "Fair Dinkum Drinking Koala 1":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "Crocolossal Collapse - Escort Ranger Ken":
+                lambda state:
+                    can_burn(world, state),
+            "Ghastly Ghost Ships - Ghost Ships":
+                lambda state:
+                    state.has("Cryptorang", world.player),
+            "That Lost Island - SOS":
+                lambda state:
+                    can_zap(world, state),
+            "Nano-Proof Fence - Fence Patches":
+                lambda state:
+                    can_freeze(world, state),
         },
 
 
