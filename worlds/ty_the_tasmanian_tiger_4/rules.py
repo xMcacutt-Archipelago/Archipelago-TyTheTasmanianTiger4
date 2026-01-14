@@ -42,18 +42,9 @@ def get_rules(world):
             "As TY Goes By...":
                 lambda state:
                     state.has("Infinirang", world.player) or state.has("Progressive Rang", world.player, 4),
-            "Beat Crikey":
+            "Treetop Terror Danger Arena":
                 lambda state:
-                    state.can_reach_location("Platypus Talisman", world.player),
-            "Beat Fluffy":
-                lambda state:
-                    state.can_reach_location("Cockatoo Talisman", world.player),
-            "Beat Shadow":
-                lambda state:
-                    state.can_reach_location("Dingo Talisman", world.player),
-            "Beat Cass":
-                lambda state:
-                    state.can_reach_location("Tiger Talisman", world.player)
+                    state.has("Blizzarang", world.player) or state.has("Progressive Rang", world.player, 2),
         },
 
 
