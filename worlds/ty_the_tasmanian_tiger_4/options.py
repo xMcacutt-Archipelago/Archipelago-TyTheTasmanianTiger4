@@ -7,7 +7,7 @@ class Goal(Choice):
     """
     Determines the goal of the seed
 
-    Final Battle: Beat Boss Cass in Final Battle and rescue your parents from The Dreaming
+    Beat Boss Cass: Beat Boss Cass in As Ty Goes By... and save the world
     """
     display_name = "Goal"
     option_final_battle = 0
@@ -16,7 +16,7 @@ class Goal(Choice):
 
 class GoalRequiresBosses(Toggle):
     """
-    Determines if beating all bosses is a requirement to go to Final Battle
+    Determines if beating all bosses is a requirement to go to As Ty Goes By...
     """
     display_name = "Goal Requires Bosses"
 
@@ -37,26 +37,6 @@ class ProgressiveLevel(DefaultOnToggle):
     display_name = "Progressive Level"
 
 
-class ThunderEggGating(Range):
-    """
-    If bosses are unlocked via hub Thunder Egg counts, required count per hub can be set here
-    This also sets the required Thunder Egg count to receive the elemental attribute check after completing bosses
-    """
-    display_name = "Thunder Egg Gating"
-    range_start = 0
-    range_end = 24
-    default = 17
-
-
-class ExtraCogs(Range):
-    """
-    Sets number of additional golden cogs to add to the pool
-    WARNING - Setting this value high without sanity is likely to lead to generation failures
-    """
-    display_name = "Extra Cogs"
-    range_start = 0
-    range_end = 90
-    default = 30
 
 
 class TrapFill(Range):
@@ -86,8 +66,6 @@ ty4_option_groups = [
     ]),
     OptionGroup("Logic Options", [
         ProgressiveElementals,
-        ThunderEggGating,
-        ExtraCogs,
         ProgressiveLevel,
     ]),
     OptionGroup("Sanity Options", [
@@ -112,8 +90,6 @@ class Ty4Options(PerGameCommonOptions):
 
     progressive_elementals: ProgressiveElementals
 
-    thegg_gating: ThunderEggGating
-    extra_cogs: ExtraCogs
 
     progressive_level: ProgressiveLevel
 

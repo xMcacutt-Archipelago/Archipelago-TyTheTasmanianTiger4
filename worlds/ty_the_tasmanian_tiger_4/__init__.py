@@ -60,10 +60,8 @@ class Ty4World(World):
             "Goal": self.options.goal.value,
             "ProgressiveElementals": self.options.progressive_elementals.value,
             "ProgressiveLevel": self.options.progressive_level.value,
-            "TheggGating": self.options.thegg_gating.value,
             "ReqBosses": self.options.req_bosses.value,
             "DeathLink": self.options.death_link.value,
-            "ExtraCog": self.options.extra_cogs.value,
         }
 
     def generate_early(self) -> None:
